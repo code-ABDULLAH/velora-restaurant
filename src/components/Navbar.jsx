@@ -34,11 +34,11 @@ export default function Navbar({ onOpenReservation }) {
         top: 0,
         zIndex: 100,
         transition: 'all 0.4s var(--transition-smooth)',
-        boxShadow: scrolled ? 'var(--shadow-3d)' : 'none',
-        background: scrolled ? 'rgba(12, 10, 9, 0.94)' : 'rgba(12, 10, 9, 0.82)',
-        backdropFilter: 'blur(24px)',
-        WebkitBackdropFilter: 'blur(24px)',
-        borderBottom: '1px solid var(--border-gold)'
+        boxShadow: scrolled ? 'var(--shadow-medium)' : 'none',
+        background: scrolled ? 'rgba(255, 255, 255, 0.92)' : 'rgba(255, 255, 255, 0.82)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        borderBottom: '1px solid var(--border-light)'
       }}
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '88px' }}>
@@ -98,15 +98,15 @@ export default function Navbar({ onOpenReservation }) {
             style={{
               padding: '0.65rem',
               borderRadius: '50%',
-              border: '1px solid var(--border-gold)',
-              backgroundColor: 'rgba(28, 23, 19, 0.75)',
-              color: soundEnabled ? 'var(--accent-gold-bright)' : 'var(--text-muted)',
+              border: '1px solid var(--border-light)',
+              backgroundColor: 'rgba(255, 255, 255, 0.9)',
+              color: soundEnabled ? 'var(--accent-gold)' : 'var(--text-muted)',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               transition: 'all 0.3s ease',
-              boxShadow: soundEnabled ? '0 0 15px rgba(245, 158, 11, 0.25)' : 'none'
+              boxShadow: 'var(--shadow-soft)'
             }}
             title={soundEnabled ? "Mute Ambient Sound" : "Enable Ambient Sound"}
           >
@@ -120,14 +120,15 @@ export default function Navbar({ onOpenReservation }) {
               position: 'relative',
               padding: '0.65rem',
               borderRadius: '50%',
-              border: '1px solid var(--border-gold)',
-              backgroundColor: 'rgba(28, 23, 19, 0.75)',
+              border: '1px solid var(--border-light)',
+              backgroundColor: 'rgba(255, 255, 255, 0.9)',
               color: 'var(--text-primary)',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              transition: 'all 0.3s ease'
+              transition: 'all 0.3s ease',
+              boxShadow: 'var(--shadow-soft)'
             }}
             title="Open Order Experience"
           >
@@ -139,7 +140,7 @@ export default function Navbar({ onOpenReservation }) {
                   top: '-4px',
                   right: '-4px',
                   backgroundColor: 'var(--accent-gold)',
-                  color: '#0C0A09',
+                  color: '#FFFFFF',
                   fontSize: '0.72rem',
                   fontWeight: '800',
                   width: '20px',
@@ -148,7 +149,7 @@ export default function Navbar({ onOpenReservation }) {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  boxShadow: '0 2px 10px rgba(245, 158, 11, 0.65)'
+                  boxShadow: '0 2px 10px rgba(13, 148, 136, 0.4)'
                 }}
               >
                 {cartCount}
@@ -173,7 +174,7 @@ export default function Navbar({ onOpenReservation }) {
             style={{
               padding: '0.65rem',
               borderRadius: 'var(--radius-sm)',
-              border: '1px solid var(--border-gold)',
+              border: '1px solid var(--border-light)',
               background: 'transparent',
               color: 'var(--text-primary)',
               cursor: 'pointer'
@@ -189,13 +190,14 @@ export default function Navbar({ onOpenReservation }) {
       {mobileMenuOpen && (
         <div
           style={{
-            background: 'var(--bg-primary)',
-            borderBottom: '1px solid var(--border-gold)',
+            background: 'var(--bg-surface)',
+            borderBottom: '1px solid var(--border-light)',
             padding: '1.5rem',
             display: 'flex',
             flexDirection: 'column',
             gap: '1.25rem',
-            textAlign: 'center'
+            textAlign: 'center',
+            boxShadow: 'var(--shadow-soft)'
           }}
         >
           {[
@@ -226,4 +228,5 @@ export default function Navbar({ onOpenReservation }) {
     </header>
   );
 }
+
 

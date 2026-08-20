@@ -27,7 +27,7 @@ export default function ReservationSection({ sectionRef }) {
       style={{
         padding: '7rem 0',
         position: 'relative',
-        background: 'radial-gradient(circle at 50% 50%, rgba(159, 18, 57, 0.22) 0%, rgba(245, 158, 11, 0.08) 40%, rgba(12, 10, 9, 1) 85%)'
+        background: 'radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.12) 0%, rgba(20, 184, 166, 0.08) 40%, rgba(248, 250, 252, 1) 85%)'
       }}
     >
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
@@ -47,11 +47,11 @@ export default function ReservationSection({ sectionRef }) {
             </p>
           </div>
 
-          <div className="glass-card" style={{ padding: '3rem', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-gold-strong)', background: 'linear-gradient(155deg, rgba(28, 23, 19, 0.95) 0%, rgba(14, 11, 9, 0.98) 100%)' }}>
+          <div className="glass-card" style={{ padding: '3rem', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-gold-strong)', backgroundColor: '#FFFFFF', boxShadow: 'var(--shadow-3d)' }}>
             
             {submitted ? (
               <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
-                <CheckCircle2 size={64} style={{ color: 'var(--accent-gold-bright)', marginBottom: '1.5rem' }} />
+                <CheckCircle2 size={64} style={{ color: 'var(--accent-gold)', marginBottom: '1.5rem' }} />
                 <h3 style={{ fontSize: '2.4rem', fontFamily: 'var(--font-serif)', color: 'var(--text-primary)', marginBottom: '0.75rem' }}>
                   Reservation Confirmed
                 </h3>
@@ -63,12 +63,12 @@ export default function ReservationSection({ sectionRef }) {
                     display: 'inline-block',
                     padding: '1.25rem 2rem',
                     borderRadius: 'var(--radius-md)',
-                    backgroundColor: 'rgba(245, 158, 11, 0.12)',
+                    backgroundColor: 'rgba(13, 148, 136, 0.08)',
                     border: '1px solid var(--border-gold)',
                     textAlign: 'left'
                   }}
                 >
-                  <div style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>RESERVATION SUMMARY</div>
+                  <div style={{ fontSize: '0.88rem', color: 'var(--text-muted)', fontWeight: 600 }}>RESERVATION SUMMARY</div>
                   <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--accent-gold-bright)', marginTop: '0.4rem' }}>
                     {formData.guests} Guests • {formData.date} @ {formData.time}
                   </div>
@@ -96,14 +96,14 @@ export default function ReservationSection({ sectionRef }) {
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Lord Alexander Vance"
+                    placeholder="e.g. Alexander Vance"
                     value={formData.name}
                     onChange={e => setFormData({ ...formData, name: e.target.value })}
                     style={{
                       padding: '0.85rem 1.1rem',
                       borderRadius: 'var(--radius-sm)',
-                      border: '1px solid var(--border-gold)',
-                      backgroundColor: 'rgba(12, 10, 9, 0.85)',
+                      border: '1px solid var(--border-light)',
+                      backgroundColor: '#F8FAFC',
                       color: 'var(--text-primary)',
                       fontSize: '0.95rem',
                       outline: 'none'
@@ -125,8 +125,8 @@ export default function ReservationSection({ sectionRef }) {
                     style={{
                       padding: '0.85rem 1.1rem',
                       borderRadius: 'var(--radius-sm)',
-                      border: '1px solid var(--border-gold)',
-                      backgroundColor: 'rgba(12, 10, 9, 0.85)',
+                      border: '1px solid var(--border-light)',
+                      backgroundColor: '#F8FAFC',
                       color: 'var(--text-primary)',
                       fontSize: '0.95rem',
                       outline: 'none'
@@ -147,8 +147,8 @@ export default function ReservationSection({ sectionRef }) {
                     style={{
                       padding: '0.85rem 1.1rem',
                       borderRadius: 'var(--radius-sm)',
-                      border: '1px solid var(--border-gold)',
-                      backgroundColor: 'rgba(12, 10, 9, 0.85)',
+                      border: '1px solid var(--border-light)',
+                      backgroundColor: '#F8FAFC',
                       color: 'var(--text-primary)',
                       fontSize: '0.95rem',
                       outline: 'none'
@@ -167,8 +167,8 @@ export default function ReservationSection({ sectionRef }) {
                     style={{
                       padding: '0.85rem 1.1rem',
                       borderRadius: 'var(--radius-sm)',
-                      border: '1px solid var(--border-gold)',
-                      backgroundColor: 'rgba(12, 10, 9, 0.85)',
+                      border: '1px solid var(--border-light)',
+                      backgroundColor: '#F8FAFC',
                       color: 'var(--text-primary)',
                       fontSize: '0.95rem',
                       outline: 'none'
@@ -193,8 +193,8 @@ export default function ReservationSection({ sectionRef }) {
                     style={{
                       padding: '0.85rem 1.1rem',
                       borderRadius: 'var(--radius-sm)',
-                      border: '1px solid var(--border-gold)',
-                      backgroundColor: 'rgba(12, 10, 9, 0.85)',
+                      border: '1px solid var(--border-light)',
+                      backgroundColor: '#F8FAFC',
                       color: 'var(--text-primary)',
                       fontSize: '0.95rem',
                       outline: 'none'
@@ -219,8 +219,8 @@ export default function ReservationSection({ sectionRef }) {
                     style={{
                       padding: '0.85rem 1.1rem',
                       borderRadius: 'var(--radius-sm)',
-                      border: '1px solid var(--border-gold)',
-                      backgroundColor: 'rgba(12, 10, 9, 0.85)',
+                      border: '1px solid var(--border-light)',
+                      backgroundColor: '#F8FAFC',
                       color: 'var(--text-primary)',
                       fontSize: '0.95rem',
                       outline: 'none'
@@ -243,8 +243,8 @@ export default function ReservationSection({ sectionRef }) {
                     <Sparkles size={18} />
                     <span>Confirm VELORA Table Request</span>
                   </button>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.75rem' }}>
-                    Dress Code: Formal Elegant • Complimentary Valet Parking Provided
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.75rem', fontWeight: 600 }}>
+                    Dress Code: Elegant Coastal Chic • Complimentary Valet Parking Provided
                   </div>
                 </div>
 
@@ -259,4 +259,5 @@ export default function ReservationSection({ sectionRef }) {
     </section>
   );
 }
+
 

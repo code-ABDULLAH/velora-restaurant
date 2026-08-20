@@ -14,7 +14,7 @@ export default function Footer() {
   };
 
   return (
-    <footer style={{ backgroundColor: 'var(--bg-dark)', color: 'var(--text-primary)', paddingTop: '6rem', paddingBottom: '3.5rem', borderTop: '1px solid var(--border-gold-strong)' }}>
+    <footer style={{ backgroundColor: '#FFFFFF', color: 'var(--text-primary)', paddingTop: '6rem', paddingBottom: '3.5rem', borderTop: '1px solid var(--border-light)' }}>
       <div className="container">
         
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '4rem', marginBottom: '4.5rem' }}>
@@ -26,7 +26,7 @@ export default function Footer() {
             </div>
 
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: 1.7, marginBottom: '1.75rem' }}>
-              VELORA is an immersive 3D haute dining sanctuary fusing Japanese precision, French gastronomy, and architectural acoustics.
+              VELORA is an immersive 3D haute dining sanctuary fusing coastal Japanese precision, French culinary technique, and architectural acoustics.
             </p>
 
             <div style={{ display: 'flex', gap: '0.6rem' }} className="badge-tag badge-gold">
@@ -47,7 +47,7 @@ export default function Footer() {
               </li>
               <li style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <span>Fri – Sun</span>
-                <span style={{ color: 'var(--accent-gold-bright)', fontWeight: 700 }}>5:00 PM – 1:00 AM</span>
+                <span style={{ color: 'var(--accent-gold)', fontWeight: 700 }}>5:00 PM – 1:00 AM</span>
               </li>
               <li style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <span>Monday</span>
@@ -55,7 +55,7 @@ export default function Footer() {
               </li>
               <li style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '0.5rem', borderTop: '1px solid var(--border-subtle)' }}>
                 <span>Valet Service</span>
-                <span style={{ color: 'var(--accent-gold-bright)' }}>✦ Complimentary</span>
+                <span style={{ color: 'var(--accent-gold)', fontWeight: 700 }}>✦ Complimentary</span>
               </li>
             </ul>
           </div>
@@ -91,7 +91,7 @@ export default function Footer() {
             </p>
 
             {subscribed ? (
-              <div style={{ backgroundColor: 'var(--accent-gold-light)', color: 'var(--accent-gold-bright)', padding: '0.85rem 1.1rem', borderRadius: 'var(--radius-sm)', fontSize: '0.85rem', border: '1px solid var(--accent-gold)' }}>
+              <div style={{ backgroundColor: 'rgba(13, 148, 136, 0.1)', color: 'var(--accent-gold-bright)', padding: '0.85rem 1.1rem', borderRadius: 'var(--radius-sm)', fontSize: '0.85rem', border: '1px solid var(--accent-gold)', fontWeight: 600 }}>
                 ✓ Welcome to VELORA Private Dispatch.
               </div>
             ) : (
@@ -106,8 +106,8 @@ export default function Footer() {
                     flex: 1,
                     padding: '0.75rem 1rem',
                     borderRadius: 'var(--radius-sm)',
-                    border: '1px solid var(--border-gold)',
-                    backgroundColor: 'rgba(14, 11, 9, 0.9)',
+                    border: '1px solid var(--border-light)',
+                    backgroundColor: '#F8FAFC',
                     color: 'var(--text-primary)',
                     fontSize: '0.88rem',
                     outline: 'none'
@@ -131,7 +131,7 @@ export default function Footer() {
           <div>
             © 2026 VELORA Haute Gastronomy. All rights reserved. Portfolio Showcase Project.
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'var(--accent-gold-bright)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'var(--accent-gold-bright)', fontWeight: 600 }}>
             <Sparkles size={14} />
             Designed & Engineered for Creative Portfolio Showcase
           </div>
@@ -141,4 +141,5 @@ export default function Footer() {
     </footer>
   );
 }
+
 

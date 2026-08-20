@@ -1,57 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* VELORA Warm Haute Gastronomy Color Palette - Deep Truffle Obsidian, Molten Amber Gold & Velvet Cabernet */
-  --bg-primary: #0C0A09;       /* Warm Stone / Truffle Obsidian */
-  --bg-surface: #14110F;       /* Roasted Espresso */
-  --bg-card: rgba(24, 20, 17, 0.75); /* Rich Dark Truffle Glass */
-  --bg-card-solid: #1C1714;   /* Deep Warm Mocha */
-  --bg-dark: #060505;          /* Absolute Black Truffle */
+  /* VELORA Cool Vibes Light Palette - Glacial Silk, Frosted Ice, Coastal Mint & Cerulean */
+  --bg-primary: #F8FAFC;         /* Glacial Silk Mist */
+  --bg-surface: #FFFFFF;         /* Pure Porcelain White */
+  --bg-card: rgba(255, 255, 255, 0.82); /* Frosted Ice Glass */
+  --bg-card-solid: #FFFFFF;     /* Solid White */
+  --bg-dark: #F1F5F9;            /* Cool Frost Slate */
   
-  /* Inviting Warm Typography */
-  --text-primary: #FFFDF7;     /* Pure Vanilla Silk */
-  --text-secondary: #E5DAC9;   /* Warm Almond Cream */
-  --text-muted: #9E9181;       /* Roasted Chestnut Muted */
+  /* Crisp Cool Typography */
+  --text-primary: #0F172A;       /* Deep Slate Obsidian */
+  --text-secondary: #475569;     /* Cool Misty Charcoal */
+  --text-muted: #94A3B8;         /* Soft Glacial Slate */
   --text-light: #FFFFFF;
   
-  /* Gourmet Warm Gold & Amber Honey */
-  --accent-gold: #F59E0B;       /* Radiant Warm Amber */
-  --accent-gold-light: rgba(245, 158, 11, 0.14);
-  --accent-gold-bright: #FDE68A; /* Glowing Saffron Chiffon */
-  --accent-gold-deep: #D97706;  /* Deep Caramel Gold */
-  --accent-gold-glow: rgba(245, 158, 11, 0.4);
+  /* Cool Vibes Accents - Glacial Cyan, Mint & Champagne Ice */
+  --accent-gold: #0D9488;         /* Cool Botanical Teal / Mint */
+  --accent-gold-light: rgba(13, 148, 136, 0.12);
+  --accent-gold-bright: #0F766E;  /* Deep Vibrant Mint Teal */
+  --accent-gold-deep: #115E59;
+  --accent-gold-glow: rgba(20, 184, 166, 0.35);
   
-  /* Velvet Cabernet & Saffron Terracotta */
-  --accent-wine: #9F1239;       /* Rich Cabernet Sauvignon */
-  --accent-wine-light: rgba(159, 18, 57, 0.22);
-  --accent-wine-bright: #E11D48; /* Saffron Crimson Flare */
-  --accent-wine-glow: rgba(225, 29, 72, 0.35);
+  /* Cool Ocean Cyan & Breeze Blue */
+  --accent-wine: #0284C7;         /* Glacial Cerulean Blue */
+  --accent-wine-light: rgba(2, 132, 199, 0.12);
+  --accent-wine-bright: #0369A1;  /* Ocean Ice Deep */
+  --accent-wine-glow: rgba(56, 189, 248, 0.35);
 
-  /* Fresh Botanical Olive / Sage Accent */
-  --accent-emerald: #10B981;
-  --accent-emerald-light: rgba(16, 185, 129, 0.15);
+  /* Cool Violet / Indigo Aura */
+  --accent-emerald: #6366F1;
+  --accent-emerald-light: rgba(99, 102, 241, 0.12);
 
-  /* Borders & Highlights */
-  --border-gold: rgba(245, 158, 11, 0.28);
-  --border-gold-strong: rgba(245, 158, 11, 0.55);
-  --border-wine: rgba(225, 29, 72, 0.3);
-  --border-light: rgba(255, 253, 247, 0.1);
-  --border-subtle: rgba(255, 253, 247, 0.06);
+  /* Light Frosted Borders & Glass Highlights */
+  --border-gold: rgba(13, 148, 136, 0.22);
+  --border-gold-strong: rgba(13, 148, 136, 0.45);
+  --border-wine: rgba(2, 132, 199, 0.25);
+  --border-light: rgba(15, 23, 42, 0.08);
+  --border-subtle: rgba(15, 23, 42, 0.06);
   
-  /* 3D Shadows and Volumetric Lighting */
-  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.6);
-  --shadow-medium: 0 16px 45px rgba(0, 0, 0, 0.75);
-  --shadow-3d: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(245, 158, 11, 0.12);
-  --shadow-3d-hover: 0 35px 75px rgba(0, 0, 0, 0.95), 0 0 45px rgba(245, 158, 11, 0.28);
-  --shadow-gold-glow: 0 0 30px rgba(245, 158, 11, 0.45);
-  --shadow-wine-glow: 0 0 30px rgba(225, 29, 72, 0.4);
+  /* Volumetric 3D Light Shadows */
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.05);
+  --shadow-medium: 0 16px 40px rgba(15, 23, 42, 0.08);
+  --shadow-3d: 0 20px 45px rgba(15, 23, 42, 0.07), 0 0 25px rgba(20, 184, 166, 0.08);
+  --shadow-3d-hover: 0 28px 60px rgba(15, 23, 42, 0.12), 0 0 35px rgba(20, 184, 166, 0.2);
+  --shadow-gold-glow: 0 8px 25px rgba(13, 148, 136, 0.28);
+  --shadow-wine-glow: 0 8px 25px rgba(2, 132, 199, 0.28);
   
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', sans-serif;
   --font-display: 'Outfit', sans-serif;
 
-  --radius-sm: 10px;
-  --radius-md: 18px;
+  --radius-sm: 12px;
+  --radius-md: 20px;
   --radius-lg: 28px;
   --radius-full: 9999px;
 
@@ -67,7 +67,7 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
@@ -81,7 +81,7 @@ body {
   position: relative;
 }
 
-/* Background Ambient Lighting & Warm Culinary Glow Grid */
+/* Background Ambient Lighting & Cool Vibe Waves */
 body::before {
   content: '';
   position: fixed;
@@ -90,9 +90,9 @@ body::before {
   width: 100vw;
   height: 100vh;
   background: 
-    radial-gradient(circle at 12% 18%, rgba(225, 29, 72, 0.14) 0%, transparent 45%),
-    radial-gradient(circle at 88% 30%, rgba(245, 158, 11, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 50% 85%, rgba(159, 18, 57, 0.12) 0%, transparent 55%);
+    radial-gradient(circle at 10% 15%, rgba(20, 184, 166, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 90% 25%, rgba(56, 189, 248, 0.09) 0%, transparent 50%),
+    radial-gradient(circle at 50% 85%, rgba(99, 102, 241, 0.06) 0%, transparent 55%);
   pointer-events: none;
   z-index: 0;
 }
@@ -102,6 +102,7 @@ h1, h2, h3, .font-serif {
   font-family: var(--font-serif);
   font-weight: 600;
   letter-spacing: -0.01em;
+  color: var(--text-primary);
 }
 
 h4, h5, h6, .font-display {
@@ -109,15 +110,15 @@ h4, h5, h6, .font-display {
   font-weight: 600;
 }
 
-/* Appetizing Gold & Wine Text Gradients */
+/* Cool Vibes Text Gradients */
 .text-gold-gradient {
-  background: linear-gradient(135deg, #FFF6D6 0%, #FBBF24 40%, #F59E0B 75%, #B45309 100%);
+  background: linear-gradient(135deg, #0F766E 0%, #0D9488 40%, #0284C7 80%, #0369A1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-wine-gradient {
-  background: linear-gradient(135deg, #FDA4AF 0%, #E11D48 50%, #881337 100%);
+  background: linear-gradient(135deg, #0284C7 0%, #38BDF8 50%, #6366F1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -130,9 +131,9 @@ h4, h5, h6, .font-display {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: #2D241E;
+  background: #CBD5E1;
   border-radius: 4px;
-  border: 1px solid var(--border-gold);
+  border: 2px solid var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-gold);
@@ -145,29 +146,30 @@ h4, h5, h6, .font-display {
   padding: 0 1.75rem;
 }
 
-/* Glassmorphism Styles */
+/* Frosted Glassmorphism Styles */
 .glass-nav {
-  background: rgba(12, 10, 9, 0.85);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid var(--border-gold);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .glass-card {
-  background: linear-gradient(145deg, rgba(30, 24, 20, 0.72) 0%, rgba(18, 14, 12, 0.85) 100%);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid var(--border-gold);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   box-shadow: var(--shadow-3d);
 }
 
 .glass-panel {
-  background: linear-gradient(135deg, rgba(36, 29, 24, 0.75) 0%, rgba(18, 15, 13, 0.9) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(248, 250, 252, 0.95) 100%);
   backdrop-filter: blur(20px);
-  border: 1px solid var(--border-gold);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: var(--shadow-soft);
 }
 
-/* Enhanced 3D Tilt Card Base with Perspective and Dynamic Light Sheen */
+/* 3D Tilt Card Base with Light Sheen */
 .card-3d {
   transition: transform 0.4s var(--transition-smooth), box-shadow 0.4s var(--transition-smooth), border-color 0.4s var(--transition-smooth);
   transform-style: preserve-3d;
@@ -186,7 +188,7 @@ h4, h5, h6, .font-display {
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(245, 158, 11, 0.15) 0%, transparent 65%);
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(20, 184, 166, 0.12) 0%, transparent 65%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -194,14 +196,14 @@ h4, h5, h6, .font-display {
   opacity: 1;
 }
 
-/* Gourmet Buttons */
+/* Cool Vibes Buttons */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.65rem;
-  background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 45%, #D97706 100%);
-  color: #0C0A09;
+  background: linear-gradient(135deg, #14B8A6 0%, #0D9488 60%, #0F766E 100%);
+  color: #FFFFFF;
   padding: 0.9rem 2.2rem;
   border-radius: var(--radius-full);
   font-family: var(--font-display);
@@ -209,7 +211,7 @@ h4, h5, h6, .font-display {
   font-size: 0.95rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   cursor: pointer;
   box-shadow: var(--shadow-gold-glow);
   transition: all 0.35s var(--transition-smooth);
@@ -223,7 +225,7 @@ h4, h5, h6, .font-display {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.4), transparent);
   transform: rotate(45deg);
   transition: all 0.6s ease;
   opacity: 0;
@@ -234,8 +236,8 @@ h4, h5, h6, .font-display {
 }
 .btn-primary:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 14px 40px rgba(245, 158, 11, 0.55);
-  color: #000;
+  box-shadow: 0 12px 32px rgba(13, 148, 136, 0.4);
+  color: #FFFFFF;
 }
 
 .btn-secondary {
@@ -243,7 +245,7 @@ h4, h5, h6, .font-display {
   align-items: center;
   justify-content: center;
   gap: 0.65rem;
-  background: rgba(28, 23, 19, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   color: var(--text-primary);
   padding: 0.9rem 2.2rem;
   border-radius: var(--radius-full);
@@ -255,13 +257,14 @@ h4, h5, h6, .font-display {
   cursor: pointer;
   backdrop-filter: blur(12px);
   transition: all 0.35s var(--transition-smooth);
+  box-shadow: var(--shadow-soft);
 }
 .btn-secondary:hover {
-  background: rgba(159, 18, 57, 0.35);
-  border-color: var(--accent-gold);
-  color: var(--accent-gold-bright);
+  background: var(--accent-wine-light);
+  border-color: var(--accent-wine);
+  color: var(--accent-wine-bright);
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(225, 29, 72, 0.35);
+  box-shadow: 0 10px 28px rgba(2, 132, 199, 0.2);
 }
 
 .btn-ghost {
@@ -291,23 +294,17 @@ h4, h5, h6, .font-display {
 
 @keyframes floatSoft {
   0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-14px) rotate(1.5deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
 }
 
 @keyframes pulseGlow {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 0.9; transform: scale(1.06); }
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
 }
 
 @keyframes spinSlow {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
-
-@keyframes shimmerGlow {
-  0% { filter: brightness(1) drop-shadow(0 0 10px rgba(245, 158, 11, 0.3)); }
-  50% { filter: brightness(1.2) drop-shadow(0 0 25px rgba(245, 158, 11, 0.6)); }
-  100% { filter: brightness(1) drop-shadow(0 0 10px rgba(245, 158, 11, 0.3)); }
 }
 
 .animate-fade-in {
@@ -320,10 +317,6 @@ h4, h5, h6, .font-display {
 
 .animate-spin-slow {
   animation: spinSlow 30s linear infinite;
-}
-
-.animate-shimmer {
-  animation: shimmerGlow 4s ease-in-out infinite;
 }
 
 /* Badges */
@@ -341,23 +334,23 @@ h4, h5, h6, .font-display {
 }
 
 .badge-gold {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(217, 119, 6, 0.12) 100%);
-  color: var(--accent-gold-bright);
+  background: rgba(13, 148, 136, 0.1);
+  color: #0F766E;
   border: 1px solid var(--border-gold-strong);
-  box-shadow: 0 4px 18px rgba(245, 158, 11, 0.2);
+  box-shadow: 0 2px 10px rgba(13, 148, 136, 0.1);
 }
 
 .badge-wine {
   background: var(--accent-wine-light);
-  color: #FDA4AF;
+  color: #0369A1;
   border: 1px solid var(--border-wine);
-  box-shadow: 0 4px 18px rgba(225, 29, 72, 0.2);
+  box-shadow: 0 2px 10px rgba(2, 132, 199, 0.1);
 }
 
 .badge-emerald {
   background: var(--accent-emerald-light);
-  color: #6EE7B7;
-  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #4F46E5;
+  border: 1px solid rgba(99, 102, 241, 0.3);
 }
 
 /* Floating Notification Toast */
@@ -366,14 +359,14 @@ h4, h5, h6, .font-display {
   bottom: 2.5rem;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(24, 20, 17, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   color: var(--text-primary);
   border: 1px solid var(--accent-gold);
   padding: 1rem 2rem;
   border-radius: var(--radius-full);
   font-size: 0.95rem;
   font-weight: 600;
-  box-shadow: var(--shadow-3d);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -391,4 +384,5 @@ h4, h5, h6, .font-display {
     scroll-behavior: auto !important;
   }
 }
+
 

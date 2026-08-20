@@ -28,7 +28,7 @@ function DishCard({ dish, onOpenDetails, onAddToCart }) {
     setTiltStyle({
       transform: 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(1)',
       boxShadow: 'var(--shadow-3d)',
-      borderColor: 'var(--border-gold)'
+      borderColor: 'var(--border-light)'
     });
   };
 
@@ -43,6 +43,8 @@ function DishCard({ dish, onOpenDetails, onAddToCart }) {
         display: 'flex',
         flexDirection: 'column',
         position: 'relative',
+        backgroundColor: 'rgba(255, 255, 255, 0.92)',
+        border: '1px solid rgba(15, 23, 42, 0.08)',
         ...tiltStyle
       }}
     >
@@ -76,19 +78,20 @@ function DishCard({ dish, onOpenDetails, onAddToCart }) {
             position: 'absolute',
             top: '14px',
             right: '14px',
-            backgroundColor: 'rgba(12, 10, 9, 0.85)',
+            backgroundColor: 'rgba(255, 255, 255, 0.92)',
             color: 'var(--accent-gold-bright)',
-            padding: '0.3rem 0.75rem',
+            padding: '0.35rem 0.85rem',
             borderRadius: 'var(--radius-full)',
-            fontSize: '0.72rem',
+            fontSize: '0.74rem',
             fontFamily: 'var(--font-display)',
             fontWeight: 700,
             border: '1px solid var(--border-gold)',
-            backdropFilter: 'blur(8px)',
+            backdropFilter: 'blur(10px)',
             display: 'flex',
             alignItems: 'center',
             gap: '0.35rem',
             cursor: 'pointer',
+            boxShadow: 'var(--shadow-soft)',
             transition: 'all 0.25s ease'
           }}
           title="Inspect 3D Plate"
@@ -102,13 +105,15 @@ function DishCard({ dish, onOpenDetails, onAddToCart }) {
             position: 'absolute',
             bottom: '14px',
             right: '14px',
-            backgroundColor: 'rgba(12, 10, 9, 0.85)',
+            backgroundColor: 'rgba(255, 255, 255, 0.92)',
             color: 'var(--text-secondary)',
             padding: '0.3rem 0.75rem',
             borderRadius: 'var(--radius-full)',
             fontSize: '0.75rem',
-            border: '1px solid var(--border-gold)',
-            backdropFilter: 'blur(8px)'
+            fontWeight: 600,
+            border: '1px solid var(--border-light)',
+            backdropFilter: 'blur(8px)',
+            boxShadow: 'var(--shadow-soft)'
           }}
         >
           {dish.calories} kcal
@@ -120,9 +125,9 @@ function DishCard({ dish, onOpenDetails, onAddToCart }) {
         
         {/* Rating & Prep Time */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.65rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', color: 'var(--accent-gold-bright)', fontSize: '0.88rem', fontWeight: 700 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', color: '#0D9488', fontSize: '0.88rem', fontWeight: 700 }}>
             <Star size={15} fill="currentColor" />
-            <span>{dish.rating} ({dish.reviewsCount} critics)</span>
+            <span style={{ color: 'var(--text-primary)' }}>{dish.rating} ({dish.reviewsCount} critics)</span>
           </div>
           <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em', fontFamily: 'var(--font-display)', fontWeight: 600 }}>
             {dish.prepTime}
@@ -152,12 +157,13 @@ function DishCard({ dish, onOpenDetails, onAddToCart }) {
                 padding: '0.65rem',
                 borderRadius: '50%',
                 border: '1px solid var(--border-gold)',
-                backgroundColor: 'rgba(28, 23, 19, 0.7)',
-                color: 'var(--accent-gold-bright)',
+                backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                color: 'var(--accent-gold)',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                boxShadow: 'var(--shadow-soft)',
                 transition: 'all 0.3s ease'
               }}
               title="View Ingredients & 3D Platter"
@@ -212,7 +218,7 @@ export default function SereneMenu() {
             The Culinary <span className="text-gold-gradient">Repertoire</span>
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7 }}>
-            Each dish at VELORA is an architectural composition of rare seasonal ingredients, avant-garde technique, and sublime flavor harmony.
+            Each dish at VELORA is an architectural composition of rare coastal ingredients, avant-garde technique, and sublime flavor harmony.
           </p>
         </div>
 
@@ -232,15 +238,16 @@ export default function SereneMenu() {
                     padding: '0.75rem 1.5rem',
                     borderRadius: 'var(--radius-full)',
                     border: '1px solid',
-                    borderColor: activeCategory === cat.id ? 'var(--accent-gold)' : 'var(--border-subtle)',
-                    backgroundColor: activeCategory === cat.id ? 'var(--accent-gold-light)' : 'rgba(28, 23, 19, 0.7)',
-                    color: activeCategory === cat.id ? 'var(--accent-gold-bright)' : 'var(--text-secondary)',
+                    borderColor: activeCategory === cat.id ? 'var(--accent-gold)' : 'var(--border-light)',
+                    backgroundColor: activeCategory === cat.id ? 'var(--accent-gold)' : 'rgba(255, 255, 255, 0.9)',
+                    color: activeCategory === cat.id ? '#FFFFFF' : 'var(--text-secondary)',
                     fontFamily: 'var(--font-display)',
-                    fontWeight: 600,
+                    fontWeight: 700,
                     fontSize: '0.88rem',
                     letterSpacing: '0.04em',
                     cursor: 'pointer',
                     backdropFilter: 'blur(10px)',
+                    boxShadow: 'var(--shadow-soft)',
                     transition: 'all 0.3s var(--transition-smooth)'
                   }}
                 >
@@ -271,11 +278,12 @@ export default function SereneMenu() {
                   padding: '0.75rem 1.25rem 0.75rem 2.8rem',
                   borderRadius: 'var(--radius-full)',
                   border: '1px solid var(--border-gold)',
-                  backgroundColor: 'rgba(28, 23, 19, 0.85)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.95)',
                   color: 'var(--text-primary)',
                   fontSize: '0.9rem',
                   outline: 'none',
                   backdropFilter: 'blur(12px)',
+                  boxShadow: 'var(--shadow-soft)',
                   transition: 'all 0.3s ease'
                 }}
               />
@@ -298,10 +306,10 @@ export default function SereneMenu() {
                   fontFamily: 'var(--font-display)',
                   border: '1px solid',
                   borderColor: activeDietary === tag.id ? 'var(--accent-gold)' : 'var(--border-subtle)',
-                  backgroundColor: activeDietary === tag.id ? 'var(--accent-gold-light)' : 'transparent',
+                  backgroundColor: activeDietary === tag.id ? 'var(--accent-gold-light)' : 'rgba(255, 255, 255, 0.8)',
                   color: activeDietary === tag.id ? 'var(--accent-gold-bright)' : 'var(--text-secondary)',
                   cursor: 'pointer',
-                  fontWeight: 500,
+                  fontWeight: 600,
                   transition: 'all 0.25s ease'
                 }}
               >
@@ -318,9 +326,10 @@ export default function SereneMenu() {
             style={{
               textAlign: 'center',
               padding: '5rem 2rem',
-              backgroundColor: 'var(--bg-card-solid)',
+              backgroundColor: '#FFFFFF',
               borderRadius: 'var(--radius-md)',
-              border: '1px dashed var(--border-gold)'
+              border: '1px dashed var(--border-gold)',
+              boxShadow: 'var(--shadow-soft)'
             }}
           >
             <Sparkles size={36} style={{ color: 'var(--accent-gold)', marginBottom: '1rem' }} />
@@ -365,4 +374,5 @@ export default function SereneMenu() {
     </section>
   );
 }
+
 

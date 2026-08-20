@@ -34,16 +34,18 @@ export default function LocationSection() {
               overflow: 'hidden',
               display: 'flex',
               flexDirection: 'column',
-              border: '1px solid var(--border-gold-strong)'
+              border: '1px solid var(--border-gold-strong)',
+              backgroundColor: '#FFFFFF',
+              boxShadow: 'var(--shadow-3d)'
             }}
           >
-            <div style={{ position: 'relative', width: '100%', height: '400px', backgroundColor: 'var(--bg-dark)' }}>
+            <div style={{ position: 'relative', width: '100%', height: '400px', backgroundColor: '#E2E8F0' }}>
               <iframe
                 title="VELORA Flagship Location"
                 src={mapEmbedSrc}
                 width="100%"
                 height="100%"
-                style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg)' }}
+                style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
               />
@@ -52,12 +54,12 @@ export default function LocationSection() {
             <div
               style={{
                 padding: '1.75rem',
-                backgroundColor: 'rgba(28, 23, 19, 0.95)',
+                backgroundColor: '#FFFFFF',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 gap: '1rem',
-                borderTop: '1px solid var(--border-gold)',
+                borderTop: '1px solid var(--border-light)',
                 flexWrap: 'wrap'
               }}
             >
@@ -92,7 +94,9 @@ export default function LocationSection() {
               style={{
                 padding: '2rem',
                 borderRadius: 'var(--radius-md)',
-                border: '1px solid var(--border-gold-strong)'
+                border: '1px solid var(--border-gold-strong)',
+                backgroundColor: '#FFFFFF',
+                boxShadow: 'var(--shadow-soft)'
               }}
             >
               <div style={{ display: 'flex', gap: '1.2rem' }}>
@@ -101,14 +105,14 @@ export default function LocationSection() {
                     width: '54px',
                     height: '54px',
                     borderRadius: '50%',
-                    backgroundColor: 'var(--accent-gold-light)',
-                    color: 'var(--accent-gold-bright)',
+                    backgroundColor: 'rgba(13, 148, 136, 0.1)',
+                    color: 'var(--accent-gold)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    border: '1px solid var(--border-gold-strong)',
+                    border: '1px solid var(--border-gold)',
                     flexShrink: 0,
-                    boxShadow: '0 4px 15px rgba(245, 158, 11, 0.25)'
+                    boxShadow: '0 4px 15px rgba(20, 184, 166, 0.15)'
                   }}
                 >
                   <Crown size={24} />
@@ -121,7 +125,7 @@ export default function LocationSection() {
                     700 Fifth Avenue, Arts District<br />
                     New York, NY 10019 • United States
                   </p>
-                  <div style={{ marginTop: '0.75rem', color: 'var(--accent-gold-bright)', fontSize: '0.85rem', fontWeight: 600 }}>
+                  <div style={{ marginTop: '0.75rem', color: 'var(--accent-gold-bright)', fontSize: '0.85rem', fontWeight: 700 }}>
                     ✦ Complimentary White-Glove Valet Parking
                   </div>
                 </div>
@@ -132,9 +136,9 @@ export default function LocationSection() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
               <div
                 className="glass-card"
-                style={{ padding: '1.5rem', borderRadius: 'var(--radius-md)' }}
+                style={{ padding: '1.5rem', borderRadius: 'var(--radius-md)', backgroundColor: '#FFFFFF', boxShadow: 'var(--shadow-soft)' }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--accent-gold-bright)', marginBottom: '0.6rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#0D9488', marginBottom: '0.6rem' }}>
                   <Clock size={20} />
                   <h4 style={{ fontSize: '1.05rem', color: 'var(--text-primary)', fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
                     Dining Hours
@@ -148,16 +152,16 @@ export default function LocationSection() {
 
               <div
                 className="glass-card"
-                style={{ padding: '1.5rem', borderRadius: 'var(--radius-md)' }}
+                style={{ padding: '1.5rem', borderRadius: 'var(--radius-md)', backgroundColor: '#FFFFFF', boxShadow: 'var(--shadow-soft)' }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--accent-gold-bright)', marginBottom: '0.6rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#0D9488', marginBottom: '0.6rem' }}>
                   <ShieldCheck size={20} />
                   <h4 style={{ fontSize: '1.05rem', color: 'var(--text-primary)', fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
                     Dress Atmosphere
                   </h4>
                 </div>
                 <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Formal & Elegant Attire Requested.<br />
+                  Formal Coastal Chic Requested.<br />
                   Private Sommelier Suites Available.
                 </p>
               </div>
@@ -172,16 +176,18 @@ export default function LocationSection() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                border: '1px solid var(--border-gold-strong)'
+                border: '1px solid var(--border-gold-strong)',
+                backgroundColor: '#FFFFFF',
+                boxShadow: 'var(--shadow-soft)'
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <Phone size={24} style={{ color: 'var(--accent-gold-bright)' }} />
+                <Phone size={24} style={{ color: 'var(--accent-gold)' }} />
                 <div>
                   <div style={{ fontWeight: 700, color: 'var(--text-primary)', fontSize: '1rem', fontFamily: 'var(--font-serif)' }}>
                     Concierge & Private Dining Direct
                   </div>
-                  <div style={{ fontSize: '0.88rem', color: 'var(--accent-gold-bright)', fontWeight: 600 }}>
+                  <div style={{ fontSize: '0.88rem', color: 'var(--accent-gold-bright)', fontWeight: 700 }}>
                     +1 (800) 835-6721 • concierge@velora-dining.com
                   </div>
                 </div>
@@ -204,4 +210,5 @@ export default function LocationSection() {
     </section>
   );
 }
+
 

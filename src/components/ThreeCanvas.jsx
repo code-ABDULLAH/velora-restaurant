@@ -53,61 +53,66 @@ export default function ThreeCanvas({ style = {}, interactive = true }) {
     scene.add(stageGroup);
     stageGroup.position.y = -0.3;
 
-    // A. Luxury Platter Pedestal (Warm Gold & Roasted Espresso Marble)
+    // A. Luxury Platter Pedestal (Platinum Pearl & Cool Frosted Mint Marble)
     const plateGeo = new THREE.CylinderGeometry(2.1, 1.8, 0.15, 64);
-    const goldRimMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0xF59E0B,
-      metalness: 0.92,
+    const platinumRimMaterial = new THREE.MeshPhysicalMaterial({
+      color: 0x14B8A6,
+      metalness: 0.85,
       roughness: 0.15,
       clearcoat: 1.0,
       clearcoatRoughness: 0.1,
       reflectivity: 0.95
     });
-    const platterMesh = new THREE.Mesh(plateGeo, goldRimMaterial);
+    const platterMesh = new THREE.Mesh(plateGeo, platinumRimMaterial);
     platterMesh.receiveShadow = true;
     stageGroup.add(platterMesh);
 
-    // Inner Truffle Obsidian Plate Surface
+    // Inner Frosted Glacial Pearl Surface
     const innerPlateGeo = new THREE.CylinderGeometry(1.85, 1.85, 0.16, 64);
-    const darkMarbleMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0x181310,
-      metalness: 0.3,
-      roughness: 0.25,
-      clearcoat: 0.8
+    const pearlMarbleMaterial = new THREE.MeshPhysicalMaterial({
+      color: 0xF1F5F9,
+      metalness: 0.2,
+      roughness: 0.15,
+      clearcoat: 0.9
     });
-    const innerPlate = new THREE.Mesh(innerPlateGeo, darkMarbleMaterial);
+    const innerPlate = new THREE.Mesh(innerPlateGeo, pearlMarbleMaterial);
     stageGroup.add(innerPlate);
 
-    // B. Dish 1: 24K Saffron Wagyu Sculpture (Faceted Gilded Organic Core + Saffron Emulsion Torus)
+    // B. Dish 1: Glacial Saffron Wagyu Sculpture (Teal Cyan Organic Core + Platinum Ribbon)
     const wagyuGroup = new THREE.Group();
     stageGroup.add(wagyuGroup);
 
     const wagyuCoreGeo = new THREE.IcosahedronGeometry(0.85, 2);
     const wagyuMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0x881337,
-      emissive: 0x33060C,
-      metalness: 0.4,
-      roughness: 0.35,
-      clearcoat: 0.9
+      color: 0x0D9488,
+      emissive: 0x042F2E,
+      metalness: 0.35,
+      roughness: 0.25,
+      clearcoat: 0.95
     });
     const wagyuCore = new THREE.Mesh(wagyuCoreGeo, wagyuMaterial);
     wagyuCore.position.y = 0.65;
     wagyuGroup.add(wagyuCore);
 
-    // Gold Leaf Veins & Flakes
+    // Platinum Ice Ribbon
     const goldRibbonGeo = new THREE.TorusKnotGeometry(0.95, 0.08, 100, 16, 2, 3);
-    const goldRibbon = new THREE.Mesh(goldRibbonGeo, goldRimMaterial);
+    const iceRibbonMat = new THREE.MeshPhysicalMaterial({
+      color: 0x38BDF8,
+      metalness: 0.8,
+      roughness: 0.15
+    });
+    const goldRibbon = new THREE.Mesh(goldRibbonGeo, iceRibbonMat);
     goldRibbon.position.y = 0.65;
     wagyuGroup.add(goldRibbon);
 
-    // C. Dish 2: Velvet Nebula Cocktail (Spherical Glass Orb + Saturn Ring Smoke)
+    // C. Dish 2: Velvet Nebula Cocktail (Glacial Cerulean Orb + Ice Ring Smoke)
     const nebulaGroup = new THREE.Group();
     nebulaGroup.visible = false;
     stageGroup.add(nebulaGroup);
 
     const cocktailOrbGeo = new THREE.SphereGeometry(0.8, 32, 32);
     const cocktailMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0xE11D48,
+      color: 0x0284C7,
       metalness: 0.1,
       roughness: 0.05,
       transmission: 0.88,
@@ -121,9 +126,9 @@ export default function ThreeCanvas({ style = {}, interactive = true }) {
 
     const saturnRingGeo = new THREE.TorusGeometry(1.25, 0.06, 16, 100);
     const ringMat = new THREE.MeshPhysicalMaterial({
-      color: 0xFDE68A,
-      emissive: 0xF59E0B,
-      metalness: 0.8,
+      color: 0x5EEAD4,
+      emissive: 0x0D9488,
+      metalness: 0.7,
       roughness: 0.2
     });
     const saturnRing = new THREE.Mesh(saturnRingGeo, ringMat);
@@ -142,53 +147,53 @@ export default function ThreeCanvas({ style = {}, interactive = true }) {
       metalness: 0.3,
       roughness: 0.2,
       clearcoat: 1.0,
-      transmission: 0.4
+      transmission: 0.5
     });
     const matchaMesh = new THREE.Mesh(matchaGeo, matchaMat);
     matchaMesh.position.y = 0.65;
     matchaGroup.add(matchaMesh);
 
     const matchaOrbitRingGeo = new THREE.TorusGeometry(1.15, 0.04, 16, 64);
-    const matchaRing = new THREE.Mesh(matchaOrbitRingGeo, goldRimMaterial);
+    const matchaRing = new THREE.Mesh(matchaOrbitRingGeo, platinumRimMaterial);
     matchaRing.rotation.x = Math.PI / 4;
     matchaRing.position.y = 0.65;
     matchaGroup.add(matchaRing);
 
-    // E. Luxury Glass Cloche Dome with Gold Finial
+    // E. Luxury Glass Cloche Dome with Platinum Finial
     const clocheGroup = new THREE.Group();
     stageGroup.add(clocheGroup);
     clocheGroup.position.y = 0.15;
 
     const clocheDomeGeo = new THREE.SphereGeometry(1.5, 48, 32, 0, Math.PI * 2, 0, Math.PI / 2);
     const clocheGlassMat = new THREE.MeshPhysicalMaterial({
-      color: 0xFFFDF7,
+      color: 0xF0FDFA,
       metalness: 0.05,
-      roughness: 0.08,
-      transmission: 0.92,
+      roughness: 0.05,
+      transmission: 0.95,
       transparent: true,
       opacity: 0.85,
-      ior: 1.5,
+      ior: 1.52,
       thickness: 0.4,
-      reflectivity: 0.9
+      reflectivity: 0.95
     });
     const clocheDome = new THREE.Mesh(clocheDomeGeo, clocheGlassMat);
     clocheGroup.add(clocheDome);
 
-    // Cloche Gold Knob Handle
+    // Cloche Handle
     const knobGeo = new THREE.SphereGeometry(0.18, 24, 24);
-    const clocheKnob = new THREE.Mesh(knobGeo, goldRimMaterial);
+    const clocheKnob = new THREE.Mesh(knobGeo, platinumRimMaterial);
     clocheKnob.position.y = 1.55;
     clocheGroup.add(clocheKnob);
 
-    // 4. 3D Floating Gold Flakes & Aromatic Steam Particle Swirls
+    // 4. 3D Floating Cool Crystal & Mint Particles
     const particleCount = prefersReducedMotion ? 60 : 220;
     const particleGeo = new THREE.BufferGeometry();
     const particlePos = new Float32Array(particleCount * 3);
     const particleColors = new Float32Array(particleCount * 3);
 
-    const amberGold = new THREE.Color(0xF59E0B);
-    const saffronWine = new THREE.Color(0xE11D48);
-    const lightVanilla = new THREE.Color(0xFDE68A);
+    const coolMint = new THREE.Color(0x14B8A6);
+    const iceCyan = new THREE.Color(0x38BDF8);
+    const diamondWhite = new THREE.Color(0xBAE6FD);
 
     for (let i = 0; i < particleCount; i++) {
       const radius = 0.5 + Math.random() * 2.2;
@@ -198,7 +203,7 @@ export default function ThreeCanvas({ style = {}, interactive = true }) {
       particlePos[i * 3 + 2] = Math.sin(angle) * radius;
 
       const pick = Math.random();
-      const col = pick > 0.5 ? amberGold : pick > 0.2 ? saffronWine : lightVanilla;
+      const col = pick > 0.5 ? coolMint : pick > 0.2 ? iceCyan : diamondWhite;
       particleColors[i * 3] = col.r;
       particleColors[i * 3 + 1] = col.g;
       particleColors[i * 3 + 2] = col.b;
@@ -217,21 +222,21 @@ export default function ThreeCanvas({ style = {}, interactive = true }) {
     const particleSystem = new THREE.Points(particleGeo, particleMat);
     stageGroup.add(particleSystem);
 
-    // 5. Dynamic Studio Lighting (Warm Amber Key Light + Rich Cabernet Rim Light)
-    const ambientLight = new THREE.AmbientLight(0xFFF7ED, 0.9);
+    // 5. Dynamic Studio Lighting (Cool Glacial Key Light + Ice Cyan Rim Light)
+    const ambientLight = new THREE.AmbientLight(0xF8FAFC, 1.2);
     scene.add(ambientLight);
 
-    const amberKeyLight = new THREE.PointLight(0xFDE68A, 3.5, 18);
-    amberKeyLight.position.set(3.5, 4.5, 4.0);
-    scene.add(amberKeyLight);
+    const coolKeyLight = new THREE.PointLight(0xCCFBF1, 3.5, 18);
+    coolKeyLight.position.set(3.5, 4.5, 4.0);
+    scene.add(coolKeyLight);
 
-    const wineRimLight = new THREE.PointLight(0xE11D48, 2.8, 18);
-    wineRimLight.position.set(-4.0, -2.0, 3.0);
-    scene.add(wineRimLight);
+    const iceRimLight = new THREE.PointLight(0x38BDF8, 3.0, 18);
+    iceRimLight.position.set(-4.0, -2.0, 3.0);
+    scene.add(iceRimLight);
 
-    const goldSpotLight = new THREE.SpotLight(0xF59E0B, 4, 15, Math.PI / 4, 0.4, 1);
-    goldSpotLight.position.set(0, 5.5, 2.5);
-    scene.add(goldSpotLight);
+    const spotLight = new THREE.SpotLight(0x14B8A6, 4, 15, Math.PI / 4, 0.4, 1);
+    spotLight.position.set(0, 5.5, 2.5);
+    scene.add(spotLight);
 
     // 6. Mouse Tracking & Interactive Drag Orbit
     let mouseX = 0;
@@ -410,8 +415,8 @@ export default function ThreeCanvas({ style = {}, interactive = true }) {
         {/* Dish Switcher Pills */}
         <div style={{ display: 'flex', gap: '0.5rem', pointerEvents: 'auto' }}>
           {[
-            { id: 'wagyu', label: '24K Wagyu' },
-            { id: 'nebula', label: 'Velvet Nebula' },
+            { id: 'wagyu', label: 'Glacial Wagyu' },
+            { id: 'nebula', label: 'Ocean Nebula' },
             { id: 'matcha', label: 'Zen Matcha' }
           ].map(dish => (
             <button
@@ -426,10 +431,11 @@ export default function ThreeCanvas({ style = {}, interactive = true }) {
                 letterSpacing: '0.04em',
                 border: '1px solid',
                 borderColor: activeModel === dish.id ? 'var(--accent-gold)' : 'var(--border-subtle)',
-                backgroundColor: activeModel === dish.id ? 'var(--accent-gold-light)' : 'rgba(24, 20, 17, 0.75)',
+                backgroundColor: activeModel === dish.id ? 'var(--accent-gold-light)' : 'rgba(255, 255, 255, 0.85)',
                 color: activeModel === dish.id ? 'var(--accent-gold-bright)' : 'var(--text-secondary)',
                 cursor: 'pointer',
                 backdropFilter: 'blur(10px)',
+                boxShadow: 'var(--shadow-soft)',
                 transition: 'all 0.25s ease'
               }}
             >
@@ -445,9 +451,9 @@ export default function ThreeCanvas({ style = {}, interactive = true }) {
             style={{
               padding: '0.4rem 0.85rem',
               borderRadius: 'var(--radius-full)',
-              backgroundColor: isLidOpen ? 'var(--accent-wine-light)' : 'rgba(24, 20, 17, 0.75)',
+              backgroundColor: isLidOpen ? 'var(--accent-wine-light)' : 'rgba(255, 255, 255, 0.9)',
               border: isLidOpen ? '1px solid var(--accent-wine-bright)' : '1px solid var(--border-gold)',
-              color: isLidOpen ? '#FDA4AF' : 'var(--accent-gold-bright)',
+              color: isLidOpen ? '#0369A1' : 'var(--accent-gold-bright)',
               fontSize: '0.75rem',
               fontFamily: 'var(--font-display)',
               fontWeight: 700,
@@ -456,6 +462,7 @@ export default function ThreeCanvas({ style = {}, interactive = true }) {
               alignItems: 'center',
               gap: '0.4rem',
               backdropFilter: 'blur(10px)',
+              boxShadow: 'var(--shadow-soft)',
               transition: 'all 0.25s ease'
             }}
             title="Lift or close the gourmet glass cloche"
@@ -471,14 +478,15 @@ export default function ThreeCanvas({ style = {}, interactive = true }) {
               width: '32px',
               height: '32px',
               borderRadius: '50%',
-              backgroundColor: autoRotate ? 'var(--accent-gold-light)' : 'rgba(24, 20, 17, 0.75)',
+              backgroundColor: autoRotate ? 'var(--accent-gold-light)' : 'rgba(255, 255, 255, 0.9)',
               border: '1px solid var(--border-gold)',
               color: autoRotate ? 'var(--accent-gold-bright)' : 'var(--text-muted)',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              backdropFilter: 'blur(10px)'
+              backdropFilter: 'blur(10px)',
+              boxShadow: 'var(--shadow-soft)'
             }}
             title={autoRotate ? "Pause Auto-Rotate" : "Start Auto-Rotate"}
           >
@@ -494,14 +502,16 @@ export default function ThreeCanvas({ style = {}, interactive = true }) {
           bottom: '12px',
           right: '16px',
           fontSize: '0.72rem',
-          color: 'var(--text-muted)',
+          color: 'var(--text-secondary)',
           fontFamily: 'var(--font-display)',
-          backgroundColor: 'rgba(12, 10, 9, 0.7)',
-          padding: '0.25rem 0.7rem',
+          fontWeight: 600,
+          backgroundColor: 'rgba(255, 255, 255, 0.85)',
+          padding: '0.25rem 0.75rem',
           borderRadius: 'var(--radius-full)',
           border: '1px solid var(--border-subtle)',
           pointerEvents: 'none',
-          backdropFilter: 'blur(6px)'
+          backdropFilter: 'blur(10px)',
+          boxShadow: 'var(--shadow-soft)'
         }}
       >
         ✦ Drag to 3D Orbit • Hover for Dynamic Tilt

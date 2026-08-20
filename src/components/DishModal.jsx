@@ -24,9 +24,9 @@ export default function DishModal() {
       style={{
         position: 'fixed',
         inset: 0,
-        backgroundColor: 'rgba(8, 6, 5, 0.88)',
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
+        backgroundColor: 'rgba(15, 23, 42, 0.45)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
         zIndex: 200,
         display: 'flex',
         alignItems: 'center',
@@ -47,7 +47,7 @@ export default function DishModal() {
           boxShadow: 'var(--shadow-3d)',
           position: 'relative',
           border: '1px solid var(--border-gold-strong)',
-          background: 'linear-gradient(155deg, rgba(28, 23, 19, 0.95) 0%, rgba(14, 11, 9, 0.98) 100%)'
+          background: 'rgba(255, 255, 255, 0.98)'
         }}
         onClick={e => e.stopPropagation()}
       >
@@ -61,15 +61,16 @@ export default function DishModal() {
             width: '40px',
             height: '40px',
             borderRadius: '50%',
-            backgroundColor: 'rgba(18, 14, 12, 0.85)',
-            border: '1px solid var(--border-gold)',
-            color: 'var(--accent-gold-bright)',
+            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            border: '1px solid var(--border-light)',
+            color: 'var(--text-primary)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             cursor: 'pointer',
             zIndex: 20,
-            transition: 'all 0.25s ease'
+            transition: 'all 0.25s ease',
+            boxShadow: 'var(--shadow-soft)'
           }}
         >
           <X size={20} />
@@ -84,11 +85,12 @@ export default function DishModal() {
             zIndex: 20,
             display: 'flex',
             gap: '0.4rem',
-            backgroundColor: 'rgba(12, 10, 9, 0.8)',
+            backgroundColor: 'rgba(255, 255, 255, 0.9)',
             padding: '4px',
             borderRadius: 'var(--radius-full)',
-            border: '1px solid var(--border-gold)',
-            backdropFilter: 'blur(10px)'
+            border: '1px solid var(--border-light)',
+            backdropFilter: 'blur(10px)',
+            boxShadow: 'var(--shadow-soft)'
           }}
         >
           <button
@@ -101,7 +103,7 @@ export default function DishModal() {
               borderRadius: 'var(--radius-full)',
               border: 'none',
               backgroundColor: viewMode === 'photo' ? 'var(--accent-gold)' : 'transparent',
-              color: viewMode === 'photo' ? '#0C0A09' : 'var(--text-secondary)',
+              color: viewMode === 'photo' ? '#FFFFFF' : 'var(--text-secondary)',
               fontSize: '0.75rem',
               fontWeight: 700,
               fontFamily: 'var(--font-display)',
@@ -123,7 +125,7 @@ export default function DishModal() {
               borderRadius: 'var(--radius-full)',
               border: 'none',
               backgroundColor: viewMode === '3d' ? 'var(--accent-gold)' : 'transparent',
-              color: viewMode === '3d' ? '#0C0A09' : 'var(--text-secondary)',
+              color: viewMode === '3d' ? '#FFFFFF' : 'var(--text-secondary)',
               fontSize: '0.75rem',
               fontWeight: 700,
               fontFamily: 'var(--font-display)',
@@ -137,7 +139,7 @@ export default function DishModal() {
         </div>
 
         {/* Modal Image or 3D Header */}
-        <div style={{ height: '300px', width: '100%', position: 'relative', overflow: 'hidden', backgroundColor: '#0F0C0A' }}>
+        <div style={{ height: '300px', width: '100%', position: 'relative', overflow: 'hidden', backgroundColor: '#F1F5F9' }}>
           {viewMode === 'photo' ? (
             <>
               <img
@@ -149,7 +151,7 @@ export default function DishModal() {
                 style={{
                   position: 'absolute',
                   inset: 0,
-                  background: 'linear-gradient(to top, rgba(28, 23, 19, 1) 0%, transparent 60%)'
+                  background: 'linear-gradient(to top, rgba(255, 255, 255, 0.9) 0%, transparent 60%)'
                 }}
               />
             </>
@@ -165,11 +167,13 @@ export default function DishModal() {
                   fontSize: '0.72rem',
                   color: 'var(--accent-gold-bright)',
                   fontFamily: 'var(--font-display)',
-                  backgroundColor: 'rgba(12, 10, 9, 0.75)',
+                  fontWeight: 600,
+                  backgroundColor: 'rgba(255, 255, 255, 0.9)',
                   padding: '0.2rem 0.8rem',
                   borderRadius: 'var(--radius-full)',
                   border: '1px solid var(--border-gold)',
-                  pointerEvents: 'none'
+                  pointerEvents: 'none',
+                  boxShadow: 'var(--shadow-soft)'
                 }}
               >
                 ✦ Move cursor to inspect 3D Platter
@@ -186,9 +190,9 @@ export default function DishModal() {
               <Crown size={13} />
               {selectedDishModal.category.toUpperCase()}
             </span>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', color: 'var(--accent-gold-bright)', fontWeight: 700 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', color: '#0D9488', fontWeight: 700 }}>
               <Star size={16} fill="currentColor" />
-              <span>{selectedDishModal.rating} ({selectedDishModal.reviewsCount} reviews)</span>
+              <span style={{ color: 'var(--text-primary)' }}>{selectedDishModal.rating} ({selectedDishModal.reviewsCount} reviews)</span>
             </div>
           </div>
 
@@ -206,10 +210,10 @@ export default function DishModal() {
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',
               gap: '1rem',
-              backgroundColor: 'rgba(14, 11, 9, 0.85)',
+              backgroundColor: '#F8FAFC',
               padding: '1.1rem',
               borderRadius: 'var(--radius-md)',
-              border: '1px solid var(--border-gold)',
+              border: '1px solid var(--border-light)',
               marginBottom: '1.75rem',
               textAlign: 'center'
             }}
@@ -238,14 +242,14 @@ export default function DishModal() {
                 <span
                   key={i}
                   style={{
-                    backgroundColor: 'rgba(245, 158, 11, 0.12)',
+                    backgroundColor: 'rgba(13, 148, 136, 0.08)',
                     border: '1px solid var(--border-gold)',
                     padding: '0.35rem 0.9rem',
                     borderRadius: 'var(--radius-full)',
                     fontSize: '0.82rem',
                     color: 'var(--text-primary)',
                     fontFamily: 'var(--font-sans)',
-                    fontWeight: 500
+                    fontWeight: 600
                   }}
                 >
                   {ing}
@@ -261,15 +265,15 @@ export default function DishModal() {
             </label>
             <input
               type="text"
-              placeholder="e.g. Extra black truffle shavings, wine pairing advice..."
+              placeholder="e.g. Extra mint glaze, sommelier pairing advice..."
               value={specialNote}
               onChange={e => setSpecialNote(e.target.value)}
               style={{
                 width: '100%',
                 padding: '0.85rem 1.1rem',
                 borderRadius: 'var(--radius-sm)',
-                border: '1px solid var(--border-gold)',
-                backgroundColor: 'rgba(12, 10, 9, 0.85)',
+                border: '1px solid var(--border-light)',
+                backgroundColor: '#F8FAFC',
                 color: 'var(--text-primary)',
                 fontSize: '0.9rem',
                 outline: 'none'
@@ -279,10 +283,10 @@ export default function DishModal() {
 
           {/* Stepper & Add Button */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1.25rem', paddingTop: '1.25rem', borderTop: '1px solid var(--border-subtle)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', backgroundColor: 'rgba(14, 11, 9, 0.9)', padding: '0.5rem 1.1rem', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-gold)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', backgroundColor: '#F8FAFC', padding: '0.5rem 1.1rem', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-light)' }}>
               <button
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                style={{ border: 'none', background: 'none', cursor: 'pointer', color: 'var(--accent-gold-bright)' }}
+                style={{ border: 'none', background: 'none', cursor: 'pointer', color: 'var(--accent-gold)' }}
               >
                 <Minus size={16} />
               </button>
@@ -291,7 +295,7 @@ export default function DishModal() {
               </span>
               <button
                 onClick={() => setQuantity(quantity + 1)}
-                style={{ border: 'none', background: 'none', cursor: 'pointer', color: 'var(--accent-gold-bright)' }}
+                style={{ border: 'none', background: 'none', cursor: 'pointer', color: 'var(--accent-gold)' }}
               >
                 <Plus size={16} />
               </button>
@@ -312,4 +316,5 @@ export default function DishModal() {
     </div>
   );
 }
+
 

@@ -4,42 +4,42 @@ import { Eye, Sparkles, X, Maximize2 } from 'lucide-react';
 const GALLERY_ITEMS = [
   {
     id: 1,
-    title: 'The Golden Saffron Wagyu',
+    title: 'The Glacial Wagyu Composition',
     category: 'culinary',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=80',
-    subtitle: 'Signature 24K Gold Culinary Art'
+    subtitle: 'Signature Cold-Cured Organic Culinary Art'
   },
   {
     id: 2,
     title: 'Main Dining Sanctum',
     category: 'ambiance',
     image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80',
-    subtitle: 'Architectural Lighting & Velvet Interiors'
+    subtitle: 'Architectural Luminous Interiors & Coastal Glass'
   },
   {
     id: 3,
-    title: 'Velvet Nebula Mixology',
+    title: 'Arctic Lagoon Mixology',
     category: 'mixology',
     image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1000&q=80',
-    subtitle: 'Liquid Nitrogen & Rosemary Smoke'
+    subtitle: 'Liquid Nitrogen, Botanical Mint & Citrus Smoke'
   },
   {
     id: 4,
     title: 'Private Wine Cellar Reserve',
     category: 'cellar',
     image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1000&q=80',
-    subtitle: 'Over 1,200 Rare Vintage Vintages'
+    subtitle: 'Over 1,200 Rare Coastal & Grand Cru Vintages'
   },
   {
     id: 5,
-    title: 'Smoked Black Cod Cloche',
+    title: 'Glacial Black Cod Cloche',
     category: 'culinary',
     image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=1000&q=80',
-    subtitle: 'Binchotan Charcoal Seared'
+    subtitle: 'Infused with Smoked Sea Kelp & Yuzu Glaze'
   },
   {
     id: 6,
-    title: "Chef's Counter Dining",
+    title: "Chef's 3D Counter Stage",
     category: 'ambiance',
     image: 'https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1000&q=80',
     subtitle: 'Front-Row Immersive Culinary Experience'
@@ -55,7 +55,7 @@ export default function GallerySection() {
     : GALLERY_ITEMS.filter(item => item.category === activeTab);
 
   return (
-    <section id="gallery" style={{ padding: '7rem 0', position: 'relative', overflow: 'hidden' }}>
+    <section id="gallery" style={{ padding: '7rem 0', position: 'relative', overflow: 'hidden', backgroundColor: 'var(--bg-surface)' }}>
       <div className="container">
         
         {/* Section Header */}
@@ -68,7 +68,7 @@ export default function GallerySection() {
             An Atmosphere of <span className="text-gold-gradient">Pure Artistry</span>
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7 }}>
-            Explore the visual tapestry of VELORA — where contemporary architecture meets avant-garde culinary theater.
+            Explore the visual tapestry of VELORA — where breezy contemporary architecture meets avant-garde 3D culinary theater.
           </p>
         </div>
 
@@ -77,7 +77,7 @@ export default function GallerySection() {
           {[
             { id: 'all', label: 'All Showcase' },
             { id: 'culinary', label: 'Plated Culinary' },
-            { id: 'ambiance', label: 'Architecture & Lighting' },
+            { id: 'ambiance', label: 'Architecture & Light' },
             { id: 'mixology', label: 'Artisan Mixology' },
             { id: 'cellar', label: 'Wine Cellar' }
           ].map(tab => (
@@ -88,13 +88,14 @@ export default function GallerySection() {
                 padding: '0.65rem 1.4rem',
                 borderRadius: 'var(--radius-full)',
                 fontFamily: 'var(--font-display)',
-                fontWeight: 600,
+                fontWeight: 700,
                 fontSize: '0.88rem',
                 letterSpacing: '0.04em',
-                border: activeTab === tab.id ? '1px solid var(--accent-gold)' : '1px solid var(--border-subtle)',
-                background: activeTab === tab.id ? 'var(--accent-gold-light)' : 'rgba(28, 23, 19, 0.65)',
-                color: activeTab === tab.id ? 'var(--accent-gold-bright)' : 'var(--text-secondary)',
+                border: activeTab === tab.id ? '1px solid var(--accent-gold)' : '1px solid var(--border-light)',
+                background: activeTab === tab.id ? 'var(--accent-gold)' : 'rgba(255, 255, 255, 0.9)',
+                color: activeTab === tab.id ? '#FFFFFF' : 'var(--text-secondary)',
                 cursor: 'pointer',
+                boxShadow: 'var(--shadow-soft)',
                 transition: 'all 0.3s var(--transition-smooth)'
               }}
             >
@@ -122,7 +123,8 @@ export default function GallerySection() {
                 cursor: 'pointer',
                 position: 'relative',
                 height: '340px',
-                border: '1px solid var(--border-gold-strong)'
+                border: '1px solid var(--border-gold-strong)',
+                boxShadow: 'var(--shadow-soft)'
               }}
             >
               <img
@@ -141,7 +143,7 @@ export default function GallerySection() {
                 style={{
                   position: 'absolute',
                   inset: 0,
-                  background: 'linear-gradient(to top, rgba(12, 10, 9, 0.95) 0%, rgba(12, 10, 9, 0.2) 60%, transparent 100%)',
+                  background: 'linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.15) 60%, transparent 100%)',
                   padding: '1.75rem',
                   display: 'flex',
                   flexDirection: 'column',
@@ -150,10 +152,10 @@ export default function GallerySection() {
               >
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <div>
-                    <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.45rem', color: 'var(--text-primary)', fontWeight: 700 }}>
+                    <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.45rem', color: '#FFFFFF', fontWeight: 700 }}>
                       {item.title}
                     </h3>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
+                    <p style={{ fontSize: '0.85rem', color: '#E2E8F0', marginTop: '0.25rem' }}>
                       {item.subtitle}
                     </p>
                   </div>
@@ -162,13 +164,13 @@ export default function GallerySection() {
                       width: '44px',
                       height: '44px',
                       borderRadius: '50%',
-                      background: 'rgba(245, 158, 11, 0.2)',
+                      background: 'rgba(255, 255, 255, 0.95)',
                       border: '1px solid var(--accent-gold)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       color: 'var(--accent-gold-bright)',
-                      boxShadow: '0 4px 15px rgba(245, 158, 11, 0.3)'
+                      boxShadow: '0 4px 15px rgba(20, 184, 166, 0.3)'
                     }}
                   >
                     <Maximize2 size={18} />
@@ -186,7 +188,7 @@ export default function GallerySection() {
               position: 'fixed',
               inset: 0,
               zIndex: 2000,
-              background: 'rgba(8, 6, 5, 0.95)',
+              background: 'rgba(15, 23, 42, 0.75)',
               backdropFilter: 'blur(20px)',
               display: 'flex',
               alignItems: 'center',
@@ -201,16 +203,17 @@ export default function GallerySection() {
                 position: 'absolute',
                 top: '2rem',
                 right: '2rem',
-                background: 'rgba(245, 158, 11, 0.2)',
+                background: 'rgba(255, 255, 255, 0.9)',
                 border: '1px solid var(--accent-gold)',
-                color: 'white',
+                color: 'var(--text-primary)',
                 width: '48px',
                 height: '48px',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                boxShadow: 'var(--shadow-soft)'
               }}
             >
               <X size={24} />
@@ -220,11 +223,11 @@ export default function GallerySection() {
               style={{
                 maxWidth: '900px',
                 width: '100%',
-                background: 'var(--bg-card-solid)',
+                background: '#FFFFFF',
                 borderRadius: 'var(--radius-lg)',
                 overflow: 'hidden',
-                border: '1px solid var(--accent-gold)',
-                boxShadow: 'var(--shadow-3d)'
+                border: '1px solid var(--border-gold-strong)',
+                boxShadow: '0 25px 60px rgba(15, 23, 42, 0.2)'
               }}
               onClick={e => e.stopPropagation()}
             >
@@ -249,4 +252,5 @@ export default function GallerySection() {
     </section>
   );
 }
+
 

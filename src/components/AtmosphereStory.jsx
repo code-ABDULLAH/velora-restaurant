@@ -6,7 +6,7 @@ export default function AtmosphereStory() {
 
   return (
     <section id="story" style={{ padding: '7rem 0', position: 'relative', overflow: 'hidden', backgroundColor: 'var(--bg-surface)' }}>
-      {/* Background Warm Wine & Amber Glow */}
+      {/* Background Cool Cyan & Mint Glow */}
       <div
         style={{
           position: 'absolute',
@@ -15,7 +15,7 @@ export default function AtmosphereStory() {
           width: '600px',
           height: '600px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(159, 18, 57, 0.2) 0%, rgba(245, 158, 11, 0.08) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(20, 184, 166, 0.08) 50%, transparent 70%)',
           filter: 'blur(80px)',
           pointerEvents: 'none'
         }}
@@ -33,7 +33,8 @@ export default function AtmosphereStory() {
                 borderRadius: 'var(--radius-lg)',
                 padding: '0.85rem',
                 position: 'relative',
-                border: '1px solid var(--border-gold-strong)'
+                border: '1px solid var(--border-gold-strong)',
+                backgroundColor: '#FFFFFF'
               }}
             >
               <img
@@ -56,15 +57,16 @@ export default function AtmosphereStory() {
                   right: '-25px',
                   padding: '1.2rem 1.6rem',
                   borderRadius: 'var(--radius-md)',
-                  border: '1px solid var(--accent-gold)',
+                  border: '1px solid var(--border-gold-strong)',
                   maxWidth: '240px',
-                  boxShadow: 'var(--shadow-3d-hover)'
+                  boxShadow: 'var(--shadow-3d-hover)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.95)'
                 }}
               >
-                <div style={{ fontSize: '2.1rem', fontFamily: 'var(--font-serif)', fontWeight: 700, color: 'var(--accent-gold-bright)' }}>
+                <div style={{ fontSize: '2.1rem', fontFamily: 'var(--font-serif)', fontWeight: 700, color: 'var(--accent-gold)' }}>
                   1,200+
                 </div>
-                <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
+                <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginTop: '0.2rem', fontWeight: 600 }}>
                   Rare Cellar Vintage Selections
                 </div>
               </div>
@@ -81,13 +83,14 @@ export default function AtmosphereStory() {
                   border: '1px solid var(--border-gold-strong)',
                   animationDelay: '2s',
                   maxWidth: '240px',
-                  boxShadow: 'var(--shadow-3d-hover)'
+                  boxShadow: 'var(--shadow-3d-hover)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.95)'
                 }}
               >
-                <div style={{ fontSize: '2.1rem', fontFamily: 'var(--font-serif)', fontWeight: 700, color: 'var(--accent-gold-bright)' }}>
+                <div style={{ fontSize: '2.1rem', fontFamily: 'var(--font-serif)', fontWeight: 700, color: 'var(--accent-gold)' }}>
                   72 Hours
                 </div>
-                <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
+                <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginTop: '0.2rem', fontWeight: 600 }}>
                   Precision Cured Wagyu & Miso
                 </div>
               </div>
@@ -108,7 +111,7 @@ export default function AtmosphereStory() {
             </h2>
 
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '2rem' }}>
-              VELORA was conceived as a sanctuary of multi-sensory luxury. We transcend traditional dining by fusing contemporary Japanese-French culinary discipline with architectural acoustics and dynamic 3D visual environments.
+              VELORA was conceived as a sanctuary of light and multi-sensory luxury. We transcend traditional dining by fusing breezy coastal refinement with architectural acoustics and dynamic 3D visual theater.
             </p>
 
             {/* Interactive Story Tabs */}
@@ -126,12 +129,13 @@ export default function AtmosphereStory() {
                     borderRadius: 'var(--radius-full)',
                     fontFamily: 'var(--font-display)',
                     fontSize: '0.85rem',
-                    fontWeight: 600,
+                    fontWeight: 700,
                     border: '1px solid',
-                    borderColor: activeStoryTab === tab.id ? 'var(--accent-gold)' : 'var(--border-subtle)',
-                    background: activeStoryTab === tab.id ? 'var(--accent-gold-light)' : 'transparent',
-                    color: activeStoryTab === tab.id ? 'var(--accent-gold-bright)' : 'var(--text-muted)',
+                    borderColor: activeStoryTab === tab.id ? 'var(--accent-gold)' : 'var(--border-light)',
+                    background: activeStoryTab === tab.id ? 'var(--accent-gold)' : 'rgba(255, 255, 255, 0.9)',
+                    color: activeStoryTab === tab.id ? '#FFFFFF' : 'var(--text-secondary)',
                     cursor: 'pointer',
+                    boxShadow: 'var(--shadow-soft)',
                     transition: 'all 0.3s ease'
                   }}
                 >
@@ -145,23 +149,24 @@ export default function AtmosphereStory() {
               style={{
                 padding: '1.6rem',
                 borderRadius: 'var(--radius-md)',
-                backgroundColor: 'rgba(28, 23, 19, 0.85)',
-                border: '1px solid var(--border-gold-strong)'
+                backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid var(--border-gold-strong)',
+                boxShadow: 'var(--shadow-soft)'
               }}
             >
               {activeStoryTab === 'philosophy' && (
                 <p style={{ color: 'var(--text-primary)', fontSize: '0.98rem', lineHeight: 1.7 }}>
-                  <strong style={{ color: 'var(--accent-gold-bright)' }}>Pure Sourcing & Zero Waste:</strong> Every protein, truffle, and botanical ingredient is sourced directly from sustainable family estates and wild ocean harbors.
+                  <strong style={{ color: 'var(--accent-gold)' }}>Pure Sourcing & Zero Waste:</strong> Every protein, truffle, and botanical ingredient is sourced directly from sustainable family estates and wild ocean harbors.
                 </p>
               )}
               {activeStoryTab === 'lighting' && (
                 <p style={{ color: 'var(--text-primary)', fontSize: '0.98rem', lineHeight: 1.7 }}>
-                  <strong style={{ color: 'var(--accent-gold-bright)' }}>Precision Mood Lighting:</strong> Custom 3D projection mapping and acoustic dampening panels ensure an intimate, soothing atmosphere for every table.
+                  <strong style={{ color: 'var(--accent-gold)' }}>Precision Mood Lighting:</strong> Custom 3D projection mapping and acoustic dampening panels ensure an intimate, soothing atmosphere for every table.
                 </p>
               )}
               {activeStoryTab === 'cellar' && (
                 <p style={{ color: 'var(--text-primary)', fontSize: '0.98rem', lineHeight: 1.7 }}>
-                  <strong style={{ color: 'var(--accent-gold-bright)' }}>Sommelier Reserve:</strong> Curated by Master Sommelier Lucian Vane, housing legendary Grand Cru vintages and artisanal Japanese small-batch sake.
+                  <strong style={{ color: 'var(--accent-gold)' }}>Sommelier Reserve:</strong> Curated by Master Sommelier Lucian Vane, housing legendary Grand Cru vintages and artisanal Japanese small-batch sake.
                 </p>
               )}
             </div>
@@ -174,4 +179,5 @@ export default function AtmosphereStory() {
     </section>
   );
 }
+
 

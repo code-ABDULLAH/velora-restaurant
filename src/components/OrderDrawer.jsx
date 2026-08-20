@@ -30,7 +30,7 @@ export default function OrderDrawer() {
       style={{
         position: 'fixed',
         inset: 0,
-        backgroundColor: 'rgba(8, 6, 5, 0.85)',
+        backgroundColor: 'rgba(15, 23, 42, 0.45)',
         backdropFilter: 'blur(16px)',
         WebkitBackdropFilter: 'blur(16px)',
         zIndex: 250,
@@ -46,12 +46,12 @@ export default function OrderDrawer() {
           width: '100%',
           maxWidth: '490px',
           height: '100%',
-          boxShadow: 'var(--shadow-3d)',
+          boxShadow: '0 25px 60px rgba(15, 23, 42, 0.25)',
           display: 'flex',
           flexDirection: 'column',
           position: 'relative',
           borderLeft: '1px solid var(--border-gold-strong)',
-          background: 'linear-gradient(180deg, rgba(28, 23, 19, 0.98) 0%, rgba(14, 11, 9, 0.99) 100%)'
+          background: '#FFFFFF'
         }}
         onClick={e => e.stopPropagation()}
       >
@@ -60,15 +60,15 @@ export default function OrderDrawer() {
         <div
           style={{
             padding: '1.75rem',
-            borderBottom: '1px solid var(--border-gold)',
+            borderBottom: '1px solid var(--border-light)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            backgroundColor: 'rgba(18, 14, 12, 0.95)'
+            backgroundColor: '#FFFFFF'
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <ShoppingBag size={22} style={{ color: 'var(--accent-gold-bright)' }} />
+            <ShoppingBag size={22} style={{ color: 'var(--accent-gold)' }} />
             <h3 style={{ fontSize: '1.5rem', color: 'var(--text-primary)', fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
               VELORA Culinary Order
             </h3>
@@ -83,7 +83,7 @@ export default function OrderDrawer() {
               border: 'none',
               background: 'none',
               cursor: 'pointer',
-              color: 'var(--accent-gold-bright)'
+              color: 'var(--text-secondary)'
             }}
           >
             <X size={22} />
@@ -108,8 +108,8 @@ export default function OrderDrawer() {
                 width: '76px',
                 height: '76px',
                 borderRadius: '50%',
-                backgroundColor: 'var(--accent-gold-light)',
-                color: 'var(--accent-gold-bright)',
+                backgroundColor: 'rgba(13, 148, 136, 0.1)',
+                color: 'var(--accent-gold)',
                 border: '1px solid var(--accent-gold)',
                 display: 'flex',
                 alignItems: 'center',
@@ -130,10 +130,10 @@ export default function OrderDrawer() {
 
             <div
               style={{
-                backgroundColor: 'rgba(14, 11, 9, 0.85)',
+                backgroundColor: '#F8FAFC',
                 padding: '1.25rem 1.5rem',
                 borderRadius: 'var(--radius-md)',
-                border: '1px solid var(--border-gold)',
+                border: '1px solid var(--border-light)',
                 width: '100%',
                 marginBottom: '2rem',
                 fontSize: '0.9rem',
@@ -141,7 +141,7 @@ export default function OrderDrawer() {
               }}
             >
               <div>Reference Code: <strong style={{ color: 'var(--accent-gold-bright)' }}>#VEL-{Math.floor(1000 + Math.random() * 9000)}</strong></div>
-              <div style={{ marginTop: '0.3rem', color: 'var(--text-muted)' }}>Estimated Prep: <strong>20 Mins</strong></div>
+              <div style={{ marginTop: '0.3rem', color: 'var(--text-muted)', fontWeight: 600 }}>Estimated Prep: <strong>20 Mins</strong></div>
             </div>
 
             <button
@@ -169,11 +169,11 @@ export default function OrderDrawer() {
                   color: 'var(--text-muted)'
                 }}
               >
-                <ShoppingBag size={52} style={{ strokeWidth: 1.2, marginBottom: '1rem', color: 'var(--accent-gold-light)' }} />
-                <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', fontFamily: 'var(--font-serif)', marginBottom: '0.5rem' }}>
+                <ShoppingBag size={52} style={{ strokeWidth: 1.2, marginBottom: '1rem', color: 'var(--accent-gold)' }} />
+                <p style={{ fontSize: '1.2rem', color: 'var(--text-primary)', fontFamily: 'var(--font-serif)', fontWeight: 700, marginBottom: '0.5rem' }}>
                   Your order bag is empty
                 </p>
-                <p style={{ fontSize: '0.88rem', textAlign: 'center' }}>
+                <p style={{ fontSize: '0.88rem', textAlign: 'center', color: 'var(--text-secondary)' }}>
                   Explore our seasonal repertoire to curate your tasting experience.
                 </p>
               </div>
@@ -181,7 +181,7 @@ export default function OrderDrawer() {
               <div style={{ flex: 1, overflowY: 'auto', padding: '1.75rem' }}>
                 
                 {/* Order Type Toggle */}
-                <div style={{ display: 'flex', backgroundColor: 'rgba(14, 11, 9, 0.9)', padding: '0.35rem', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-gold)', marginBottom: '1.75rem' }}>
+                <div style={{ display: 'flex', backgroundColor: '#F8FAFC', padding: '0.35rem', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-light)', marginBottom: '1.75rem' }}>
                   <button
                     type="button"
                     onClick={() => setOrderType('pickup')}
@@ -190,10 +190,10 @@ export default function OrderDrawer() {
                       padding: '0.55rem 0',
                       borderRadius: 'var(--radius-full)',
                       border: 'none',
-                      backgroundColor: orderType === 'pickup' ? 'var(--accent-gold-light)' : 'transparent',
-                      color: orderType === 'pickup' ? 'var(--accent-gold-bright)' : 'var(--text-muted)',
+                      backgroundColor: orderType === 'pickup' ? 'var(--accent-gold)' : 'transparent',
+                      color: orderType === 'pickup' ? '#FFFFFF' : 'var(--text-secondary)',
                       fontFamily: 'var(--font-display)',
-                      fontWeight: 600,
+                      fontWeight: 700,
                       fontSize: '0.85rem',
                       cursor: 'pointer'
                     }}
@@ -208,10 +208,10 @@ export default function OrderDrawer() {
                       padding: '0.55rem 0',
                       borderRadius: 'var(--radius-full)',
                       border: 'none',
-                      backgroundColor: orderType === 'dinein' ? 'var(--accent-gold-light)' : 'transparent',
-                      color: orderType === 'dinein' ? 'var(--accent-gold-bright)' : 'var(--text-muted)',
+                      backgroundColor: orderType === 'dinein' ? 'var(--accent-gold)' : 'transparent',
+                      color: orderType === 'dinein' ? '#FFFFFF' : 'var(--text-secondary)',
                       fontFamily: 'var(--font-display)',
-                      fontWeight: 600,
+                      fontWeight: 700,
                       fontSize: '0.85rem',
                       cursor: 'pointer'
                     }}
@@ -235,7 +235,7 @@ export default function OrderDrawer() {
                       <img
                         src={item.image}
                         alt={item.name}
-                        style={{ width: '70px', height: '70px', borderRadius: 'var(--radius-sm)', objectFit: 'cover', border: '1px solid var(--border-gold)' }}
+                        style={{ width: '70px', height: '70px', borderRadius: 'var(--radius-sm)', objectFit: 'cover', border: '1px solid var(--border-light)' }}
                       />
 
                       <div style={{ flex: 1 }}>
@@ -252,7 +252,7 @@ export default function OrderDrawer() {
                         </div>
 
                         {item.specialNote && (
-                          <div style={{ fontSize: '0.78rem', color: 'var(--accent-gold-bright)', fontStyle: 'italic', marginBottom: '0.4rem' }}>
+                          <div style={{ fontSize: '0.78rem', color: 'var(--accent-gold-bright)', fontStyle: 'italic', marginBottom: '0.4rem', fontWeight: 600 }}>
                             Note: "{item.specialNote}"
                           </div>
                         )}
@@ -262,19 +262,19 @@ export default function OrderDrawer() {
                             ${item.price * item.quantity}
                           </span>
 
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', backgroundColor: 'rgba(14, 11, 9, 0.9)', padding: '0.25rem 0.65rem', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-gold)' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', backgroundColor: '#F8FAFC', padding: '0.25rem 0.65rem', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-light)' }}>
                             <button
                               onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                              style={{ border: 'none', background: 'none', cursor: 'pointer', color: 'var(--accent-gold-bright)' }}
+                              style={{ border: 'none', background: 'none', cursor: 'pointer', color: 'var(--accent-gold)' }}
                             >
                               <Minus size={13} />
                             </button>
-                            <span style={{ fontSize: '0.88rem', fontWeight: 700, minWidth: '18px', textAlign: 'center' }}>
+                            <span style={{ fontSize: '0.88rem', fontWeight: 700, minWidth: '18px', textAlign: 'center', color: 'var(--text-primary)' }}>
                               {item.quantity}
                             </span>
                             <button
                               onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                              style={{ border: 'none', background: 'none', cursor: 'pointer', color: 'var(--accent-gold-bright)' }}
+                              style={{ border: 'none', background: 'none', cursor: 'pointer', color: 'var(--accent-gold)' }}
                             >
                               <Plus size={13} />
                             </button>
@@ -301,12 +301,12 @@ export default function OrderDrawer() {
                           padding: '0.45rem 0',
                           borderRadius: 'var(--radius-sm)',
                           border: '1px solid',
-                          borderColor: tipPercentage === pct ? 'var(--accent-gold)' : 'var(--border-subtle)',
-                          backgroundColor: tipPercentage === pct ? 'var(--accent-gold-light)' : 'transparent',
-                          color: tipPercentage === pct ? 'var(--accent-gold-bright)' : 'var(--text-secondary)',
+                          borderColor: tipPercentage === pct ? 'var(--accent-gold)' : 'var(--border-light)',
+                          backgroundColor: tipPercentage === pct ? 'var(--accent-gold)' : '#F8FAFC',
+                          color: tipPercentage === pct ? '#FFFFFF' : 'var(--text-secondary)',
                           fontSize: '0.85rem',
                           fontFamily: 'var(--font-display)',
-                          fontWeight: 600,
+                          fontWeight: 700,
                           cursor: 'pointer'
                         }}
                       >
@@ -327,8 +327,8 @@ export default function OrderDrawer() {
                     style={{
                       padding: '0.8rem 1rem',
                       borderRadius: 'var(--radius-sm)',
-                      border: '1px solid var(--border-gold)',
-                      backgroundColor: 'rgba(14, 11, 9, 0.9)',
+                      border: '1px solid var(--border-light)',
+                      backgroundColor: '#F8FAFC',
                       color: 'var(--text-primary)',
                       fontSize: '0.9rem',
                       outline: 'none'
@@ -343,8 +343,8 @@ export default function OrderDrawer() {
                     style={{
                       padding: '0.8rem 1rem',
                       borderRadius: 'var(--radius-sm)',
-                      border: '1px solid var(--border-gold)',
-                      backgroundColor: 'rgba(14, 11, 9, 0.9)',
+                      border: '1px solid var(--border-light)',
+                      backgroundColor: '#F8FAFC',
                       color: 'var(--text-primary)',
                       fontSize: '0.9rem',
                       outline: 'none'
@@ -360,8 +360,8 @@ export default function OrderDrawer() {
               <div
                 style={{
                   padding: '1.75rem',
-                  borderTop: '1px solid var(--border-gold)',
-                  backgroundColor: 'rgba(18, 14, 12, 0.98)'
+                  borderTop: '1px solid var(--border-light)',
+                  backgroundColor: '#FFFFFF'
                 }}
               >
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem', fontSize: '0.9rem', marginBottom: '1.25rem' }}>
@@ -377,7 +377,7 @@ export default function OrderDrawer() {
                     <span>State & Local Tax (8.875%)</span>
                     <span>${taxAmount.toFixed(2)}</span>
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '1.35rem', fontFamily: 'var(--font-serif)', fontWeight: 700, color: 'var(--text-primary)', paddingTop: '0.6rem', borderTop: '1px dashed var(--border-gold)' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '1.35rem', fontFamily: 'var(--font-serif)', fontWeight: 700, color: 'var(--text-primary)', paddingTop: '0.6rem', borderTop: '1px dashed var(--border-light)' }}>
                     <span>Grand Total</span>
                     <span style={{ color: 'var(--accent-gold-bright)' }}>${grandTotal.toFixed(2)}</span>
                   </div>
@@ -400,4 +400,5 @@ export default function OrderDrawer() {
     </div>
   );
 }
+
 

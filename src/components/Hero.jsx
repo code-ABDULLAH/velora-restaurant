@@ -10,13 +10,13 @@ export default function Hero({ onExploreMenu, onBookTable }) {
         position: 'relative',
         padding: '5rem 0 5rem',
         overflow: 'hidden',
-        background: 'radial-gradient(circle at 75% 35%, rgba(159, 18, 57, 0.25) 0%, rgba(245, 158, 11, 0.1) 40%, rgba(12, 10, 9, 1) 80%)',
+        background: 'radial-gradient(circle at 75% 35%, rgba(56, 189, 248, 0.12) 0%, rgba(20, 184, 166, 0.08) 35%, rgba(248, 250, 252, 1) 80%)',
         minHeight: '90vh',
         display: 'flex',
         alignItems: 'center'
       }}
     >
-      {/* Background Volumetric Warm Candlelight Glows */}
+      {/* Background Volumetric Cool Mint & Cyan Glows */}
       <div
         style={{
           position: 'absolute',
@@ -25,7 +25,7 @@ export default function Hero({ onExploreMenu, onBookTable }) {
           width: '550px',
           height: '550px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, rgba(225, 29, 72, 0.08) 50%, transparent 75%)',
+          background: 'radial-gradient(circle, rgba(20, 184, 166, 0.15) 0%, rgba(56, 189, 248, 0.1) 50%, transparent 75%)',
           filter: 'blur(70px)',
           pointerEvents: 'none'
         }}
@@ -61,7 +61,7 @@ export default function Hero({ onExploreMenu, onBookTable }) {
                 letterSpacing: '0.12em',
                 textTransform: 'uppercase',
                 marginBottom: '1.75rem',
-                boxShadow: '0 4px 18px rgba(245, 158, 11, 0.2)'
+                boxShadow: '0 4px 15px rgba(20, 184, 166, 0.15)'
               }}
             >
               <Sparkles size={14} style={{ color: 'var(--accent-gold)' }} />
@@ -106,7 +106,7 @@ export default function Hero({ onExploreMenu, onBookTable }) {
                 fontFamily: 'var(--font-sans)'
               }}
             >
-              Where multi-sensory Japanese-French gastronomy meets interactive 3D architecture. Indulge in 24K Miyazaki Wagyu, smoked black cod cloche, and liquid nitrogen mixology.
+              Where breezy coastal refinement meets interactive 3D architecture. Indulge in Glacial Wagyu, smoked black cod cloche, and arctic nitrogen mixology.
             </p>
 
             {/* CTA Action Buttons */}
@@ -142,7 +142,7 @@ export default function Hero({ onExploreMenu, onBookTable }) {
               }}
             >
               <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', color: 'var(--accent-gold)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', color: '#0D9488' }}>
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={15} fill="currentColor" />
                   ))}
@@ -178,7 +178,7 @@ export default function Hero({ onExploreMenu, onBookTable }) {
                 zIndex: 1,
                 borderRadius: 'var(--radius-lg)',
                 overflow: 'hidden',
-                background: 'radial-gradient(circle at 50% 50%, rgba(28, 23, 19, 0.7) 0%, rgba(12, 10, 9, 0.9) 100%)',
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 253, 250, 0.9) 100%)',
                 border: '1px solid var(--border-gold-strong)',
                 boxShadow: 'var(--shadow-3d)'
               }}
@@ -201,12 +201,13 @@ export default function Hero({ onExploreMenu, onBookTable }) {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '1.25rem',
-                border: '1px solid var(--border-gold-strong)'
+                border: '1px solid var(--border-gold-strong)',
+                background: 'rgba(255, 255, 255, 0.92)'
               }}
             >
               <img
                 src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=300&q=80"
-                alt="24K Gold Saffron Wagyu Tenderloin"
+                alt="Glacial Wagyu Tenderloin"
                 style={{
                   width: '74px',
                   height: '74px',
@@ -221,10 +222,10 @@ export default function Hero({ onExploreMenu, onBookTable }) {
                   Chef's 3D Masterpiece
                 </span>
                 <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)', marginTop: '0.3rem' }}>
-                  24K Gold Saffron Wagyu
+                  Glacial Wagyu Tenderloin
                 </div>
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                  A5 Miyazaki Wagyu & Shaved Winter Truffle
+                  A5 Miyazaki Wagyu & Winter Truffle Foam
                 </div>
               </div>
               <div style={{ textAlign: 'right' }}>
