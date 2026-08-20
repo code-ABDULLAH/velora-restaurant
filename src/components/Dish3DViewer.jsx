@@ -198,14 +198,14 @@ export default function Dish3DViewer({ dish, style = {} }) {
       cancelAnimationFrame(animId);
 
       plateGeo.dispose();
-      goldRimMat.dispose();
-      darkInnerPlateGeo.dispose();
-      darkPlateMat.dispose();
+      platinumRimMat.dispose();
+      pearlInnerPlateGeo.dispose();
+      pearlPlateMat.dispose();
       particleGeo.dispose();
       particleMat.dispose();
       renderer.dispose();
 
-      if (container && renderer.domElement) {
+      if (container && renderer.domElement && container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);
       }
     };

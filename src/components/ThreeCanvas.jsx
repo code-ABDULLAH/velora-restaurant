@@ -359,18 +359,20 @@ export default function ThreeCanvas({ style = {}, interactive = true }) {
 
       // Dispose Geometries & Materials
       plateGeo.dispose();
-      goldRimMaterial.dispose();
+      platinumRimMaterial.dispose();
       innerPlateGeo.dispose();
-      darkMarbleMaterial.dispose();
+      pearlMarbleMaterial.dispose();
       wagyuCoreGeo.dispose();
       wagyuMaterial.dispose();
       goldRibbonGeo.dispose();
+      iceRibbonMat.dispose();
       cocktailOrbGeo.dispose();
       cocktailMaterial.dispose();
       saturnRingGeo.dispose();
       ringMat.dispose();
       matchaGeo.dispose();
       matchaMat.dispose();
+      matchaOrbitRingGeo.dispose();
       clocheDomeGeo.dispose();
       clocheGlassMat.dispose();
       knobGeo.dispose();
@@ -378,7 +380,7 @@ export default function ThreeCanvas({ style = {}, interactive = true }) {
       particleMat.dispose();
       renderer.dispose();
 
-      if (container && renderer.domElement) {
+      if (container && renderer.domElement && container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);
       }
     };
