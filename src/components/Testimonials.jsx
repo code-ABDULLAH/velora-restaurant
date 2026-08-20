@@ -36,19 +36,20 @@ export default function Testimonials() {
           style={{
             borderRadius: 'var(--radius-lg)',
             padding: '4rem 3.5rem',
-            border: '1px solid var(--border-gold)',
+            border: '1px solid var(--border-gold-strong)',
             position: 'relative',
-            textAlign: 'center'
+            textAlign: 'center',
+            boxShadow: 'var(--shadow-3d-hover)'
           }}
         >
           <Quote
             size={56}
             style={{
-              color: 'var(--accent-gold-light)',
+              color: 'var(--accent-gold)',
               position: 'absolute',
               top: '28px',
               left: '36px',
-              opacity: 0.7
+              opacity: 0.25
             }}
           />
 
@@ -63,7 +64,7 @@ export default function Testimonials() {
           <p
             style={{
               fontFamily: 'var(--font-serif)',
-              fontSize: '1.7rem',
+              fontSize: '1.75rem',
               color: 'var(--text-primary)',
               lineHeight: 1.55,
               marginBottom: '2.25rem',
@@ -79,8 +80,8 @@ export default function Testimonials() {
               src={current.avatar}
               alt={current.author}
               style={{
-                width: '60px',
-                height: '60px',
+                width: '64px',
+                height: '64px',
                 borderRadius: '50%',
                 objectFit: 'cover',
                 border: '2px solid var(--accent-gold)'
@@ -117,13 +118,14 @@ export default function Testimonials() {
                 width: '46px',
                 height: '46px',
                 borderRadius: '50%',
-                backgroundColor: 'rgba(23, 26, 33, 0.9)',
+                backgroundColor: 'rgba(28, 23, 19, 0.9)',
                 border: '1px solid var(--border-gold)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
-                color: 'var(--accent-gold-bright)'
+                color: 'var(--accent-gold-bright)',
+                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.5)'
               }}
             >
               <ChevronLeft size={22} />
@@ -136,13 +138,14 @@ export default function Testimonials() {
                 width: '46px',
                 height: '46px',
                 borderRadius: '50%',
-                backgroundColor: 'rgba(23, 26, 33, 0.9)',
+                backgroundColor: 'rgba(28, 23, 19, 0.9)',
                 border: '1px solid var(--border-gold)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
-                color: 'var(--accent-gold-bright)'
+                color: 'var(--accent-gold-bright)',
+                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.5)'
               }}
             >
               <ChevronRight size={22} />
@@ -155,3 +158,4 @@ export default function Testimonials() {
     </section>
   );
 }
+

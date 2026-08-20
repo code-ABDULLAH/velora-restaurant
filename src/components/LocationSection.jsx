@@ -20,7 +20,7 @@ export default function LocationSection() {
             Visit <span className="text-gold-gradient">VELORA</span>
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7 }}>
-            Located in the heart of the Arts District, offering valet arrival, private dining suites, and rooftop terrace access.
+            Located in the heart of the Arts District, offering complimentary valet arrival, private dining suites, and rooftop terrace access.
           </p>
         </div>
 
@@ -33,7 +33,8 @@ export default function LocationSection() {
               borderRadius: 'var(--radius-lg)',
               overflow: 'hidden',
               display: 'flex',
-              flexDirection: 'column'
+              flexDirection: 'column',
+              border: '1px solid var(--border-gold-strong)'
             }}
           >
             <div style={{ position: 'relative', width: '100%', height: '400px', backgroundColor: 'var(--bg-dark)' }}>
@@ -51,7 +52,7 @@ export default function LocationSection() {
             <div
               style={{
                 padding: '1.75rem',
-                backgroundColor: 'rgba(23, 26, 33, 0.9)',
+                backgroundColor: 'rgba(28, 23, 19, 0.95)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
@@ -91,22 +92,23 @@ export default function LocationSection() {
               style={{
                 padding: '2rem',
                 borderRadius: 'var(--radius-md)',
-                border: '1px solid var(--border-gold)'
+                border: '1px solid var(--border-gold-strong)'
               }}
             >
               <div style={{ display: 'flex', gap: '1.2rem' }}>
                 <div
                   style={{
-                    width: '52px',
-                    height: '52px',
+                    width: '54px',
+                    height: '54px',
                     borderRadius: '50%',
                     backgroundColor: 'var(--accent-gold-light)',
                     color: 'var(--accent-gold-bright)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    border: '1px solid var(--border-gold)',
-                    flexShrink: 0
+                    border: '1px solid var(--border-gold-strong)',
+                    flexShrink: 0,
+                    boxShadow: '0 4px 15px rgba(245, 158, 11, 0.25)'
                   }}
                 >
                   <Crown size={24} />
@@ -120,7 +122,7 @@ export default function LocationSection() {
                     New York, NY 10019 • United States
                   </p>
                   <div style={{ marginTop: '0.75rem', color: 'var(--accent-gold-bright)', fontSize: '0.85rem', fontWeight: 600 }}>
-                    Complimentary White-Glove Valet Parking
+                    ✦ Complimentary White-Glove Valet Parking
                   </div>
                 </div>
               </div>
@@ -169,7 +171,8 @@ export default function LocationSection() {
                 borderRadius: 'var(--radius-md)',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
+                border: '1px solid var(--border-gold-strong)'
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
@@ -201,3 +204,4 @@ export default function LocationSection() {
     </section>
   );
 }
+

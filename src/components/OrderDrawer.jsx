@@ -30,8 +30,9 @@ export default function OrderDrawer() {
       style={{
         position: 'fixed',
         inset: 0,
-        backgroundColor: 'rgba(5, 6, 7, 0.8)',
-        backdropFilter: 'blur(12px)',
+        backgroundColor: 'rgba(8, 6, 5, 0.85)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
         zIndex: 250,
         display: 'flex',
         justifyContent: 'flex-end',
@@ -43,13 +44,14 @@ export default function OrderDrawer() {
         className="glass-card"
         style={{
           width: '100%',
-          maxWidth: '480px',
+          maxWidth: '490px',
           height: '100%',
           boxShadow: 'var(--shadow-3d)',
           display: 'flex',
           flexDirection: 'column',
           position: 'relative',
-          borderLeft: '1px solid var(--accent-gold)'
+          borderLeft: '1px solid var(--border-gold-strong)',
+          background: 'linear-gradient(180deg, rgba(28, 23, 19, 0.98) 0%, rgba(14, 11, 9, 0.99) 100%)'
         }}
         onClick={e => e.stopPropagation()}
       >
@@ -62,7 +64,7 @@ export default function OrderDrawer() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            backgroundColor: 'rgba(10, 11, 13, 0.95)'
+            backgroundColor: 'rgba(18, 14, 12, 0.95)'
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -128,7 +130,7 @@ export default function OrderDrawer() {
 
             <div
               style={{
-                backgroundColor: 'rgba(10, 11, 13, 0.8)',
+                backgroundColor: 'rgba(14, 11, 9, 0.85)',
                 padding: '1.25rem 1.5rem',
                 borderRadius: 'var(--radius-md)',
                 border: '1px solid var(--border-gold)',
@@ -179,7 +181,7 @@ export default function OrderDrawer() {
               <div style={{ flex: 1, overflowY: 'auto', padding: '1.75rem' }}>
                 
                 {/* Order Type Toggle */}
-                <div style={{ display: 'flex', backgroundColor: 'rgba(10, 11, 13, 0.8)', padding: '0.35rem', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-gold)', marginBottom: '1.75rem' }}>
+                <div style={{ display: 'flex', backgroundColor: 'rgba(14, 11, 9, 0.9)', padding: '0.35rem', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-gold)', marginBottom: '1.75rem' }}>
                   <button
                     type="button"
                     onClick={() => setOrderType('pickup')}
@@ -196,7 +198,7 @@ export default function OrderDrawer() {
                       cursor: 'pointer'
                     }}
                   >
-                    👑 Curbside Valet Pickup
+                    👑 Curbside Valet
                   </button>
                   <button
                     type="button"
@@ -260,7 +262,7 @@ export default function OrderDrawer() {
                             ${item.price * item.quantity}
                           </span>
 
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', backgroundColor: 'rgba(10, 11, 13, 0.8)', padding: '0.25rem 0.65rem', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-gold)' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', backgroundColor: 'rgba(14, 11, 9, 0.9)', padding: '0.25rem 0.65rem', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-gold)' }}>
                             <button
                               onClick={() => updateQuantity(item.id, item.quantity - 1)}
                               style={{ border: 'none', background: 'none', cursor: 'pointer', color: 'var(--accent-gold-bright)' }}
@@ -326,7 +328,7 @@ export default function OrderDrawer() {
                       padding: '0.8rem 1rem',
                       borderRadius: 'var(--radius-sm)',
                       border: '1px solid var(--border-gold)',
-                      backgroundColor: 'rgba(10, 11, 13, 0.8)',
+                      backgroundColor: 'rgba(14, 11, 9, 0.9)',
                       color: 'var(--text-primary)',
                       fontSize: '0.9rem',
                       outline: 'none'
@@ -342,7 +344,7 @@ export default function OrderDrawer() {
                       padding: '0.8rem 1rem',
                       borderRadius: 'var(--radius-sm)',
                       border: '1px solid var(--border-gold)',
-                      backgroundColor: 'rgba(10, 11, 13, 0.8)',
+                      backgroundColor: 'rgba(14, 11, 9, 0.9)',
                       color: 'var(--text-primary)',
                       fontSize: '0.9rem',
                       outline: 'none'
@@ -359,7 +361,7 @@ export default function OrderDrawer() {
                 style={{
                   padding: '1.75rem',
                   borderTop: '1px solid var(--border-gold)',
-                  backgroundColor: 'rgba(10, 11, 13, 0.95)'
+                  backgroundColor: 'rgba(18, 14, 12, 0.98)'
                 }}
               >
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem', fontSize: '0.9rem', marginBottom: '1.25rem' }}>
@@ -398,3 +400,4 @@ export default function OrderDrawer() {
     </div>
   );
 }
+

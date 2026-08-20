@@ -27,19 +27,19 @@ export default function ReservationSection({ sectionRef }) {
       style={{
         padding: '7rem 0',
         position: 'relative',
-        background: 'radial-gradient(circle at 50% 50%, rgba(114, 47, 55, 0.18) 0%, rgba(10, 11, 13, 1) 80%)'
+        background: 'radial-gradient(circle at 50% 50%, rgba(159, 18, 57, 0.22) 0%, rgba(245, 158, 11, 0.08) 40%, rgba(12, 10, 9, 1) 85%)'
       }}
     >
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         
-        <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '840px', margin: '0 auto' }}>
           
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <div className="badge-tag badge-gold" style={{ marginBottom: '1rem' }}>
               <Crown size={14} />
               Private Dining Reservations
             </div>
-            <h2 style={{ fontSize: '3.5rem', color: 'var(--text-primary)', marginBottom: '1rem', lineHeight: 1.1 }}>
+            <h2 style={{ fontSize: '3.6rem', color: 'var(--text-primary)', marginBottom: '1rem', lineHeight: 1.1 }}>
               Secure Your <span className="text-gold-gradient">VELORA Table</span>
             </h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7 }}>
@@ -47,7 +47,7 @@ export default function ReservationSection({ sectionRef }) {
             </p>
           </div>
 
-          <div className="glass-card" style={{ padding: '3rem', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-gold)' }}>
+          <div className="glass-card" style={{ padding: '3rem', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-gold-strong)', background: 'linear-gradient(155deg, rgba(28, 23, 19, 0.95) 0%, rgba(14, 11, 9, 0.98) 100%)' }}>
             
             {submitted ? (
               <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
@@ -63,7 +63,7 @@ export default function ReservationSection({ sectionRef }) {
                     display: 'inline-block',
                     padding: '1.25rem 2rem',
                     borderRadius: 'var(--radius-md)',
-                    backgroundColor: 'rgba(212, 175, 55, 0.1)',
+                    backgroundColor: 'rgba(245, 158, 11, 0.12)',
                     border: '1px solid var(--border-gold)',
                     textAlign: 'left'
                   }}
@@ -103,7 +103,7 @@ export default function ReservationSection({ sectionRef }) {
                       padding: '0.85rem 1.1rem',
                       borderRadius: 'var(--radius-sm)',
                       border: '1px solid var(--border-gold)',
-                      backgroundColor: 'rgba(10, 11, 13, 0.7)',
+                      backgroundColor: 'rgba(12, 10, 9, 0.85)',
                       color: 'var(--text-primary)',
                       fontSize: '0.95rem',
                       outline: 'none'
@@ -126,7 +126,7 @@ export default function ReservationSection({ sectionRef }) {
                       padding: '0.85rem 1.1rem',
                       borderRadius: 'var(--radius-sm)',
                       border: '1px solid var(--border-gold)',
-                      backgroundColor: 'rgba(10, 11, 13, 0.7)',
+                      backgroundColor: 'rgba(12, 10, 9, 0.85)',
                       color: 'var(--text-primary)',
                       fontSize: '0.95rem',
                       outline: 'none'
@@ -148,7 +148,7 @@ export default function ReservationSection({ sectionRef }) {
                       padding: '0.85rem 1.1rem',
                       borderRadius: 'var(--radius-sm)',
                       border: '1px solid var(--border-gold)',
-                      backgroundColor: 'rgba(10, 11, 13, 0.7)',
+                      backgroundColor: 'rgba(12, 10, 9, 0.85)',
                       color: 'var(--text-primary)',
                       fontSize: '0.95rem',
                       outline: 'none'
@@ -168,7 +168,7 @@ export default function ReservationSection({ sectionRef }) {
                       padding: '0.85rem 1.1rem',
                       borderRadius: 'var(--radius-sm)',
                       border: '1px solid var(--border-gold)',
-                      backgroundColor: 'rgba(10, 11, 13, 0.7)',
+                      backgroundColor: 'rgba(12, 10, 9, 0.85)',
                       color: 'var(--text-primary)',
                       fontSize: '0.95rem',
                       outline: 'none'
@@ -194,7 +194,7 @@ export default function ReservationSection({ sectionRef }) {
                       padding: '0.85rem 1.1rem',
                       borderRadius: 'var(--radius-sm)',
                       border: '1px solid var(--border-gold)',
-                      backgroundColor: 'rgba(10, 11, 13, 0.7)',
+                      backgroundColor: 'rgba(12, 10, 9, 0.85)',
                       color: 'var(--text-primary)',
                       fontSize: '0.95rem',
                       outline: 'none'
@@ -220,7 +220,7 @@ export default function ReservationSection({ sectionRef }) {
                       padding: '0.85rem 1.1rem',
                       borderRadius: 'var(--radius-sm)',
                       border: '1px solid var(--border-gold)',
-                      backgroundColor: 'rgba(10, 11, 13, 0.7)',
+                      backgroundColor: 'rgba(12, 10, 9, 0.85)',
                       color: 'var(--text-primary)',
                       fontSize: '0.95rem',
                       outline: 'none'
@@ -244,7 +244,7 @@ export default function ReservationSection({ sectionRef }) {
                     <span>Confirm VELORA Table Request</span>
                   </button>
                   <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.75rem' }}>
-                    Dress Code: Formal Elegant • Valet Parking Provided
+                    Dress Code: Formal Elegant • Complimentary Valet Parking Provided
                   </div>
                 </div>
 
@@ -259,3 +259,4 @@ export default function ReservationSection({ sectionRef }) {
     </section>
   );
 }
+

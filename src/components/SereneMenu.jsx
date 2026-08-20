@@ -1,7 +1,185 @@
 import React, { useState, useMemo } from 'react';
 import { MENU_CATEGORIES, DIETARY_TAGS, MENU_ITEMS } from '../data/menuData';
-import { Search, Plus, Info, Star, Sparkles, Crown } from 'lucide-react';
+import { Search, Plus, Info, Star, Sparkles, Crown, Box } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+
+function DishCard({ dish, onOpenDetails, onAddToCart }) {
+  const [tiltStyle, setTiltStyle] = useState({});
+
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -8;
+    const rotateY = ((x - centerX) / centerX) * 8;
+
+    setTiltStyle({
+      transform: `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px) scale(1.02)`,
+      boxShadow: 'var(--shadow-3d-hover)',
+      borderColor: 'var(--border-gold-strong)',
+      '--mouse-x': `${(x / rect.width) * 100}%`,
+      '--mouse-y': `${(y / rect.height) * 100}%`
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setTiltStyle({
+      transform: 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(1)',
+      boxShadow: 'var(--shadow-3d)',
+      borderColor: 'var(--border-gold)'
+    });
+  };
+
+  return (
+    <div
+      className="card-3d glass-card"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        borderRadius: 'var(--radius-md)',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'relative',
+        ...tiltStyle
+      }}
+    >
+      {/* Dynamic Cursor Sheen Layer */}
+      <div className="sheen-layer" />
+
+      {/* Image & Overlay Badges */}
+      <div style={{ position: 'relative', height: '240px', overflow: 'hidden' }}>
+        <img
+          src={dish.image}
+          alt={dish.name}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            transition: 'transform 0.6s var(--transition-smooth)'
+          }}
+        />
+
+        {dish.isPopular && (
+          <span className="badge-tag badge-gold" style={{ position: 'absolute', top: '14px', left: '14px' }}>
+            <Crown size={12} />
+            Chef's Reserve
+          </span>
+        )}
+
+        {/* 3D Model Available Indicator */}
+        <button
+          onClick={() => onOpenDetails(dish)}
+          style={{
+            position: 'absolute',
+            top: '14px',
+            right: '14px',
+            backgroundColor: 'rgba(12, 10, 9, 0.85)',
+            color: 'var(--accent-gold-bright)',
+            padding: '0.3rem 0.75rem',
+            borderRadius: 'var(--radius-full)',
+            fontSize: '0.72rem',
+            fontFamily: 'var(--font-display)',
+            fontWeight: 700,
+            border: '1px solid var(--border-gold)',
+            backdropFilter: 'blur(8px)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.35rem',
+            cursor: 'pointer',
+            transition: 'all 0.25s ease'
+          }}
+          title="Inspect 3D Plate"
+        >
+          <Box size={13} />
+          <span>3D View</span>
+        </button>
+
+        <span
+          style={{
+            position: 'absolute',
+            bottom: '14px',
+            right: '14px',
+            backgroundColor: 'rgba(12, 10, 9, 0.85)',
+            color: 'var(--text-secondary)',
+            padding: '0.3rem 0.75rem',
+            borderRadius: 'var(--radius-full)',
+            fontSize: '0.75rem',
+            border: '1px solid var(--border-gold)',
+            backdropFilter: 'blur(8px)'
+          }}
+        >
+          {dish.calories} kcal
+        </span>
+      </div>
+
+      {/* Card Body */}
+      <div style={{ padding: '1.75rem', display: 'flex', flexDirection: 'column', flex: 1, position: 'relative', zIndex: 2 }}>
+        
+        {/* Rating & Prep Time */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.65rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', color: 'var(--accent-gold-bright)', fontSize: '0.88rem', fontWeight: 700 }}>
+            <Star size={15} fill="currentColor" />
+            <span>{dish.rating} ({dish.reviewsCount} critics)</span>
+          </div>
+          <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em', fontFamily: 'var(--font-display)', fontWeight: 600 }}>
+            {dish.prepTime}
+          </span>
+        </div>
+
+        <h3 style={{ fontSize: '1.45rem', color: 'var(--text-primary)', marginBottom: '0.6rem', fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
+          {dish.name}
+        </h3>
+
+        <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem', flex: 1 }}>
+          {dish.shortDesc}
+        </p>
+
+        {/* Pricing & Actions */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '1.2rem', borderTop: '1px solid var(--border-subtle)' }}>
+          <div>
+            <span style={{ fontSize: '1.55rem', fontFamily: 'var(--font-serif)', fontWeight: 700, color: 'var(--accent-gold-bright)' }}>
+              ${dish.price}
+            </span>
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <button
+              onClick={() => onOpenDetails(dish)}
+              style={{
+                padding: '0.65rem',
+                borderRadius: '50%',
+                border: '1px solid var(--border-gold)',
+                backgroundColor: 'rgba(28, 23, 19, 0.7)',
+                color: 'var(--accent-gold-bright)',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'all 0.3s ease'
+              }}
+              title="View Ingredients & 3D Platter"
+            >
+              <Info size={18} />
+            </button>
+
+            <button
+              onClick={() => onAddToCart(dish, 1)}
+              className="btn-primary"
+              style={{ padding: '0.65rem 1.3rem', fontSize: '0.82rem' }}
+            >
+              <Plus size={15} />
+              <span>Add</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+}
 
 export default function SereneMenu() {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -55,7 +233,7 @@ export default function SereneMenu() {
                     borderRadius: 'var(--radius-full)',
                     border: '1px solid',
                     borderColor: activeCategory === cat.id ? 'var(--accent-gold)' : 'var(--border-subtle)',
-                    backgroundColor: activeCategory === cat.id ? 'var(--accent-gold-light)' : 'rgba(23, 26, 33, 0.6)',
+                    backgroundColor: activeCategory === cat.id ? 'var(--accent-gold-light)' : 'rgba(28, 23, 19, 0.7)',
                     color: activeCategory === cat.id ? 'var(--accent-gold-bright)' : 'var(--text-secondary)',
                     fontFamily: 'var(--font-display)',
                     fontWeight: 600,
@@ -93,7 +271,7 @@ export default function SereneMenu() {
                   padding: '0.75rem 1.25rem 0.75rem 2.8rem',
                   borderRadius: 'var(--radius-full)',
                   border: '1px solid var(--border-gold)',
-                  backgroundColor: 'rgba(23, 26, 33, 0.8)',
+                  backgroundColor: 'rgba(28, 23, 19, 0.85)',
                   color: 'var(--text-primary)',
                   fontSize: '0.9rem',
                   outline: 'none',
@@ -173,118 +351,12 @@ export default function SereneMenu() {
             }}
           >
             {filteredDishes.map(dish => (
-              <div
+              <DishCard
                 key={dish.id}
-                className="card-3d glass-card"
-                style={{
-                  borderRadius: 'var(--radius-md)',
-                  overflow: 'hidden',
-                  display: 'flex',
-                  flexDirection: 'column'
-                }}
-              >
-                {/* Image & Overlay Badges */}
-                <div style={{ position: 'relative', height: '240px', overflow: 'hidden' }}>
-                  <img
-                    src={dish.image}
-                    alt={dish.name}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      transition: 'transform 0.6s var(--transition-smooth)'
-                    }}
-                  />
-
-                  {dish.isPopular && (
-                    <span className="badge-tag badge-gold" style={{ position: 'absolute', top: '14px', left: '14px' }}>
-                      <Crown size={12} />
-                      Chef's Reserve
-                    </span>
-                  )}
-
-                  <span
-                    style={{
-                      position: 'absolute',
-                      bottom: '14px',
-                      right: '14px',
-                      backgroundColor: 'rgba(10, 11, 13, 0.85)',
-                      color: 'var(--text-secondary)',
-                      padding: '0.3rem 0.75rem',
-                      borderRadius: 'var(--radius-full)',
-                      fontSize: '0.75rem',
-                      border: '1px solid var(--border-gold)',
-                      backdropFilter: 'blur(8px)'
-                    }}
-                  >
-                    {dish.calories} kcal
-                  </span>
-                </div>
-
-                {/* Card Body */}
-                <div style={{ padding: '1.75rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                  
-                  {/* Rating & Prep Time */}
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.65rem' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', color: 'var(--accent-gold-bright)', fontSize: '0.88rem', fontWeight: 700 }}>
-                      <Star size={15} fill="currentColor" />
-                      <span>{dish.rating} ({dish.reviewsCount} critics)</span>
-                    </div>
-                    <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                      {dish.prepTime}
-                    </span>
-                  </div>
-
-                  <h3 style={{ fontSize: '1.45rem', color: 'var(--text-primary)', marginBottom: '0.6rem', fontFamily: 'var(--font-serif)', fontWeight: 700 }}>
-                    {dish.name}
-                  </h3>
-
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem', flex: 1 }}>
-                    {dish.shortDesc}
-                  </p>
-
-                  {/* Pricing & Actions */}
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '1.2rem', borderTop: '1px solid var(--border-subtle)' }}>
-                    <div>
-                      <span style={{ fontSize: '1.5rem', fontFamily: 'var(--font-serif)', fontWeight: 700, color: 'var(--accent-gold-bright)' }}>
-                        ${dish.price}
-                      </span>
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                      <button
-                        onClick={() => setSelectedDishModal(dish)}
-                        style={{
-                          padding: '0.65rem',
-                          borderRadius: '50%',
-                          border: '1px solid var(--border-gold)',
-                          backgroundColor: 'rgba(23, 26, 33, 0.6)',
-                          color: 'var(--accent-gold-bright)',
-                          cursor: 'pointer',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          transition: 'all 0.3s ease'
-                        }}
-                        title="View Full Ingredients & Culinary Art Story"
-                      >
-                        <Info size={18} />
-                      </button>
-
-                      <button
-                        onClick={() => addToCart(dish, 1)}
-                        className="btn-primary"
-                        style={{ padding: '0.65rem 1.3rem', fontSize: '0.82rem' }}
-                      >
-                        <Plus size={15} />
-                        <span>Add</span>
-                      </button>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
+                dish={dish}
+                onOpenDetails={setSelectedDishModal}
+                onAddToCart={addToCart}
+              />
             ))}
           </div>
         )}
@@ -293,3 +365,4 @@ export default function SereneMenu() {
     </section>
   );
 }
+

@@ -64,7 +64,7 @@ export default function GallerySection() {
             <Sparkles size={14} />
             Multi-Sensory Gallery
           </div>
-          <h2 style={{ fontSize: '3.2rem', color: 'var(--text-primary)', marginBottom: '1.25rem', lineHeight: 1.15 }}>
+          <h2 style={{ fontSize: '3.5rem', color: 'var(--text-primary)', marginBottom: '1.25rem', lineHeight: 1.15 }}>
             An Atmosphere of <span className="text-gold-gradient">Pure Artistry</span>
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7 }}>
@@ -92,7 +92,7 @@ export default function GallerySection() {
                 fontSize: '0.88rem',
                 letterSpacing: '0.04em',
                 border: activeTab === tab.id ? '1px solid var(--accent-gold)' : '1px solid var(--border-subtle)',
-                background: activeTab === tab.id ? 'var(--accent-gold-light)' : 'rgba(23, 26, 33, 0.5)',
+                background: activeTab === tab.id ? 'var(--accent-gold-light)' : 'rgba(28, 23, 19, 0.65)',
                 color: activeTab === tab.id ? 'var(--accent-gold-bright)' : 'var(--text-secondary)',
                 cursor: 'pointer',
                 transition: 'all 0.3s var(--transition-smooth)'
@@ -108,7 +108,7 @@ export default function GallerySection() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
-            gap: '2rem'
+            gap: '2.2rem'
           }}
         >
           {filteredItems.map(item => (
@@ -121,8 +121,8 @@ export default function GallerySection() {
                 overflow: 'hidden',
                 cursor: 'pointer',
                 position: 'relative',
-                height: '320px',
-                border: '1px solid var(--border-gold)'
+                height: '340px',
+                border: '1px solid var(--border-gold-strong)'
               }}
             >
               <img
@@ -141,7 +141,7 @@ export default function GallerySection() {
                 style={{
                   position: 'absolute',
                   inset: 0,
-                  background: 'linear-gradient(to top, rgba(10, 11, 13, 0.95) 0%, rgba(10, 11, 13, 0.2) 60%, transparent 100%)',
+                  background: 'linear-gradient(to top, rgba(12, 10, 9, 0.95) 0%, rgba(12, 10, 9, 0.2) 60%, transparent 100%)',
                   padding: '1.75rem',
                   display: 'flex',
                   flexDirection: 'column',
@@ -159,15 +159,16 @@ export default function GallerySection() {
                   </div>
                   <div
                     style={{
-                      width: '42px',
-                      height: '42px',
+                      width: '44px',
+                      height: '44px',
                       borderRadius: '50%',
-                      background: 'rgba(212, 175, 55, 0.2)',
+                      background: 'rgba(245, 158, 11, 0.2)',
                       border: '1px solid var(--accent-gold)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: 'var(--accent-gold-bright)'
+                      color: 'var(--accent-gold-bright)',
+                      boxShadow: '0 4px 15px rgba(245, 158, 11, 0.3)'
                     }}
                   >
                     <Maximize2 size={18} />
@@ -185,7 +186,7 @@ export default function GallerySection() {
               position: 'fixed',
               inset: 0,
               zIndex: 2000,
-              background: 'rgba(5, 6, 7, 0.95)',
+              background: 'rgba(8, 6, 5, 0.95)',
               backdropFilter: 'blur(20px)',
               display: 'flex',
               alignItems: 'center',
@@ -200,7 +201,7 @@ export default function GallerySection() {
                 position: 'absolute',
                 top: '2rem',
                 right: '2rem',
-                background: 'rgba(212, 175, 55, 0.2)',
+                background: 'rgba(245, 158, 11, 0.2)',
                 border: '1px solid var(--accent-gold)',
                 color: 'white',
                 width: '48px',
@@ -233,7 +234,7 @@ export default function GallerySection() {
                 style={{ width: '100%', maxHeight: '550px', objectFit: 'cover' }}
               />
               <div style={{ padding: '2rem', textAlign: 'center' }}>
-                <h3 style={{ fontSize: '2rem', color: 'var(--accent-gold-bright)', marginBottom: '0.5rem' }}>
+                <h3 style={{ fontSize: '2rem', color: 'var(--accent-gold-bright)', marginBottom: '0.5rem', fontFamily: 'var(--font-serif)' }}>
                   {activeImage.title}
                 </h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>
@@ -248,3 +249,4 @@ export default function GallerySection() {
     </section>
   );
 }
+

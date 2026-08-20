@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Calendar, Sparkles, Award, Star, Compass } from 'lucide-react';
+import { ArrowRight, Calendar, Sparkles, Star, Crown, Flame } from 'lucide-react';
 import ThreeCanvas from './ThreeCanvas';
 
 export default function Hero({ onExploreMenu, onBookTable }) {
@@ -8,25 +8,25 @@ export default function Hero({ onExploreMenu, onBookTable }) {
       id="hero"
       style={{
         position: 'relative',
-        padding: '6rem 0 5rem',
+        padding: '5rem 0 5rem',
         overflow: 'hidden',
-        background: 'radial-gradient(circle at 75% 30%, rgba(114, 47, 55, 0.2) 0%, rgba(10, 11, 13, 1) 75%)',
-        minHeight: '88vh',
+        background: 'radial-gradient(circle at 75% 35%, rgba(159, 18, 57, 0.25) 0%, rgba(245, 158, 11, 0.1) 40%, rgba(12, 10, 9, 1) 80%)',
+        minHeight: '90vh',
         display: 'flex',
         alignItems: 'center'
       }}
     >
-      {/* Background Subtle Ambient Glow */}
+      {/* Background Volumetric Warm Candlelight Glows */}
       <div
         style={{
           position: 'absolute',
-          top: '20%',
-          right: '10%',
-          width: '500px',
-          height: '500px',
+          top: '15%',
+          right: '8%',
+          width: '550px',
+          height: '550px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 70%)',
-          filter: 'blur(60px)',
+          background: 'radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, rgba(225, 29, 72, 0.08) 50%, transparent 75%)',
+          filter: 'blur(70px)',
           pointerEvents: 'none'
         }}
       />
@@ -36,7 +36,7 @@ export default function Hero({ onExploreMenu, onBookTable }) {
           style={{
             display: 'grid',
             gridTemplateColumns: '1.1fr 0.9fr',
-            gap: '4rem',
+            gap: '3.5rem',
             alignItems: 'center'
           }}
         >
@@ -52,33 +52,34 @@ export default function Hero({ onExploreMenu, onBookTable }) {
                 gap: '0.6rem',
                 backgroundColor: 'var(--accent-gold-light)',
                 color: 'var(--accent-gold-bright)',
-                border: '1px solid var(--border-gold)',
-                padding: '0.45rem 1.1rem',
+                border: '1px solid var(--border-gold-strong)',
+                padding: '0.45rem 1.15rem',
                 borderRadius: 'var(--radius-full)',
                 fontSize: '0.82rem',
                 fontFamily: 'var(--font-display)',
                 fontWeight: 700,
                 letterSpacing: '0.12em',
                 textTransform: 'uppercase',
-                marginBottom: '1.75rem'
+                marginBottom: '1.75rem',
+                boxShadow: '0 4px 18px rgba(245, 158, 11, 0.2)'
               }}
             >
               <Sparkles size={14} style={{ color: 'var(--accent-gold)' }} />
-              <span>Modern Fusion • World-Class Culinary Theater</span>
+              <span>Modern Haute Fusion • Immersive 3D Gastronomy</span>
             </div>
 
             {/* Main Brand Title & Tagline */}
             <h1
               style={{
-                fontSize: '4.5rem',
+                fontSize: '4.6rem',
                 lineHeight: 1.05,
                 color: 'var(--text-primary)',
-                marginBottom: '1rem',
+                marginBottom: '1.2rem',
                 fontWeight: 700,
                 fontFamily: 'var(--font-serif)'
               }}
             >
-              <span style={{ display: 'block', letterSpacing: '0.08em' }} className="text-gold-gradient">
+              <span style={{ display: 'block', letterSpacing: '0.06em' }} className="text-gold-gradient">
                 VELORA
               </span>
               <span
@@ -88,10 +89,10 @@ export default function Hero({ onExploreMenu, onBookTable }) {
                   fontStyle: 'italic',
                   color: 'var(--text-secondary)',
                   display: 'block',
-                  marginTop: '0.2rem'
+                  marginTop: '0.3rem'
                 }}
               >
-                Taste Beyond the Ordinary
+                The Art of 3D Culinary Theater
               </span>
             </h1>
 
@@ -105,7 +106,7 @@ export default function Hero({ onExploreMenu, onBookTable }) {
                 fontFamily: 'var(--font-sans)'
               }}
             >
-              Where contemporary culinary art meets immersive 3D architecture. Experience rare 24K Miyazaki Wagyu, smoked black cod, and handcrafted botanical mixology.
+              Where multi-sensory Japanese-French gastronomy meets interactive 3D architecture. Indulge in 24K Miyazaki Wagyu, smoked black cod cloche, and liquid nitrogen mixology.
             </p>
 
             {/* CTA Action Buttons */}
@@ -155,7 +156,7 @@ export default function Hero({ onExploreMenu, onBookTable }) {
               </div>
 
               <div style={{ borderLeft: '1px solid var(--border-gold)', paddingLeft: '2.5rem' }}>
-                <div style={{ fontSize: '1.1rem', fontFamily: 'var(--font-serif)', fontWeight: 700, color: 'var(--accent-gold-bright)' }}>
+                <div style={{ fontSize: '1.15rem', fontFamily: 'var(--font-serif)', fontWeight: 700, color: 'var(--accent-gold-bright)' }}>
                   Arts District Flagship
                 </div>
                 <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>
@@ -167,54 +168,59 @@ export default function Hero({ onExploreMenu, onBookTable }) {
           </div>
 
           {/* Hero Right Visual Presentation - Interactive 3D WebGL Canvas */}
-          <div style={{ position: 'relative', height: '480px' }}>
+          <div style={{ position: 'relative', height: '520px' }}>
             
-            {/* Interactive Three.js 3D WebGL Canvas Layer */}
+            {/* Interactive Three.js 3D WebGL Canvas Stage */}
             <div
               style={{
                 position: 'absolute',
                 inset: 0,
                 zIndex: 1,
                 borderRadius: 'var(--radius-lg)',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                background: 'radial-gradient(circle at 50% 50%, rgba(28, 23, 19, 0.7) 0%, rgba(12, 10, 9, 0.9) 100%)',
+                border: '1px solid var(--border-gold-strong)',
+                boxShadow: 'var(--shadow-3d)'
               }}
             >
               <ThreeCanvas interactive={true} />
             </div>
 
-            {/* Floating Featured Dish Preview Overlay */}
+            {/* Floating Featured Dish Preview Overlay Card */}
             <div
               className="glass-card animate-float"
               style={{
                 position: 'absolute',
-                bottom: '-20px',
+                bottom: '-24px',
                 left: '20px',
                 right: '20px',
                 zIndex: 2,
-                padding: '1.25rem 1.6rem',
+                padding: '1.2rem 1.6rem',
                 borderRadius: 'var(--radius-md)',
-                boxShadow: 'var(--shadow-3d)',
+                boxShadow: 'var(--shadow-3d-hover)',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '1.25rem'
+                gap: '1.25rem',
+                border: '1px solid var(--border-gold-strong)'
               }}
             >
               <img
                 src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=300&q=80"
                 alt="24K Gold Saffron Wagyu Tenderloin"
                 style={{
-                  width: '72px',
-                  height: '72px',
+                  width: '74px',
+                  height: '74px',
                   borderRadius: 'var(--radius-sm)',
                   objectFit: 'cover',
                   border: '1px solid var(--accent-gold)'
                 }}
               />
               <div style={{ flex: 1 }}>
-                <span className="badge-tag badge-gold" style={{ fontSize: '0.68rem', padding: '0.25rem 0.65rem' }}>
-                  👑 Chef's Masterpiece
+                <span className="badge-tag badge-gold" style={{ fontSize: '0.68rem', padding: '0.22rem 0.65rem' }}>
+                  <Crown size={11} />
+                  Chef's 3D Masterpiece
                 </span>
-                <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.2rem', fontWeight: 700, color: 'var(--text-primary)', marginTop: '0.3rem' }}>
+                <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)', marginTop: '0.3rem' }}>
                   24K Gold Saffron Wagyu
                 </div>
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
@@ -222,7 +228,7 @@ export default function Hero({ onExploreMenu, onBookTable }) {
                 </div>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <span style={{ fontSize: '1.3rem', fontFamily: 'var(--font-serif)', fontWeight: 700, color: 'var(--accent-gold-bright)' }}>
+                <span style={{ fontSize: '1.4rem', fontFamily: 'var(--font-serif)', fontWeight: 700, color: 'var(--accent-gold-bright)' }}>
                   $165
                 </span>
               </div>
@@ -235,3 +241,4 @@ export default function Hero({ onExploreMenu, onBookTable }) {
     </section>
   );
 }
+

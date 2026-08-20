@@ -14,7 +14,7 @@ export default function Footer() {
   };
 
   return (
-    <footer style={{ backgroundColor: 'var(--bg-dark)', color: 'var(--text-primary)', paddingTop: '6rem', paddingBottom: '3.5rem', borderTop: '1px solid var(--border-gold)' }}>
+    <footer style={{ backgroundColor: 'var(--bg-dark)', color: 'var(--text-primary)', paddingTop: '6rem', paddingBottom: '3.5rem', borderTop: '1px solid var(--border-gold-strong)' }}>
       <div className="container">
         
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '4rem', marginBottom: '4.5rem' }}>
@@ -30,7 +30,7 @@ export default function Footer() {
             </p>
 
             <div style={{ display: 'flex', gap: '0.6rem' }} className="badge-tag badge-gold">
-              <Crown size={12} />
+              <Crown size={13} />
               Three Michelin Stars • 2026
             </div>
           </div>
@@ -55,7 +55,7 @@ export default function Footer() {
               </li>
               <li style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '0.5rem', borderTop: '1px solid var(--border-subtle)' }}>
                 <span>Valet Service</span>
-                <span style={{ color: 'var(--accent-gold-bright)' }}>Complimentary</span>
+                <span style={{ color: 'var(--accent-gold-bright)' }}>✦ Complimentary</span>
               </li>
             </ul>
           </div>
@@ -107,7 +107,7 @@ export default function Footer() {
                     padding: '0.75rem 1rem',
                     borderRadius: 'var(--radius-sm)',
                     border: '1px solid var(--border-gold)',
-                    backgroundColor: 'rgba(10, 11, 13, 0.9)',
+                    backgroundColor: 'rgba(14, 11, 9, 0.9)',
                     color: 'var(--text-primary)',
                     fontSize: '0.88rem',
                     outline: 'none'
@@ -141,3 +141,4 @@ export default function Footer() {
     </footer>
   );
 }
+

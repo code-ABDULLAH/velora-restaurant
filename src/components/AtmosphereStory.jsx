@@ -6,7 +6,7 @@ export default function AtmosphereStory() {
 
   return (
     <section id="story" style={{ padding: '7rem 0', position: 'relative', overflow: 'hidden', backgroundColor: 'var(--bg-surface)' }}>
-      {/* Background Wine Glow */}
+      {/* Background Warm Wine & Amber Glow */}
       <div
         style={{
           position: 'absolute',
@@ -15,8 +15,8 @@ export default function AtmosphereStory() {
           width: '600px',
           height: '600px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(114, 47, 55, 0.18) 0%, transparent 70%)',
-          filter: 'blur(70px)',
+          background: 'radial-gradient(circle, rgba(159, 18, 57, 0.2) 0%, rgba(245, 158, 11, 0.08) 50%, transparent 70%)',
+          filter: 'blur(80px)',
           pointerEvents: 'none'
         }}
       />
@@ -32,7 +32,8 @@ export default function AtmosphereStory() {
               style={{
                 borderRadius: 'var(--radius-lg)',
                 padding: '0.85rem',
-                position: 'relative'
+                position: 'relative',
+                border: '1px solid var(--border-gold-strong)'
               }}
             >
               <img
@@ -56,13 +57,14 @@ export default function AtmosphereStory() {
                   padding: '1.2rem 1.6rem',
                   borderRadius: 'var(--radius-md)',
                   border: '1px solid var(--accent-gold)',
-                  maxWidth: '240px'
+                  maxWidth: '240px',
+                  boxShadow: 'var(--shadow-3d-hover)'
                 }}
               >
-                <div style={{ fontSize: '2rem', fontFamily: 'var(--font-serif)', fontWeight: 700, color: 'var(--accent-gold-bright)' }}>
+                <div style={{ fontSize: '2.1rem', fontFamily: 'var(--font-serif)', fontWeight: 700, color: 'var(--accent-gold-bright)' }}>
                   1,200+
                 </div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
+                <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
                   Rare Cellar Vintage Selections
                 </div>
               </div>
@@ -76,15 +78,16 @@ export default function AtmosphereStory() {
                   left: '-25px',
                   padding: '1.2rem 1.6rem',
                   borderRadius: 'var(--radius-md)',
-                  border: '1px solid var(--border-gold)',
+                  border: '1px solid var(--border-gold-strong)',
                   animationDelay: '2s',
-                  maxWidth: '240px'
+                  maxWidth: '240px',
+                  boxShadow: 'var(--shadow-3d-hover)'
                 }}
               >
-                <div style={{ fontSize: '2rem', fontFamily: 'var(--font-serif)', fontWeight: 700, color: 'var(--accent-gold-bright)' }}>
+                <div style={{ fontSize: '2.1rem', fontFamily: 'var(--font-serif)', fontWeight: 700, color: 'var(--accent-gold-bright)' }}>
                   72 Hours
                 </div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
+                <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
                   Precision Cured Wagyu & Miso
                 </div>
               </div>
@@ -140,10 +143,10 @@ export default function AtmosphereStory() {
             {/* Tab Descriptions */}
             <div
               style={{
-                padding: '1.5rem',
+                padding: '1.6rem',
                 borderRadius: 'var(--radius-md)',
-                backgroundColor: 'rgba(23, 26, 33, 0.6)',
-                border: '1px solid var(--border-gold)'
+                backgroundColor: 'rgba(28, 23, 19, 0.85)',
+                border: '1px solid var(--border-gold-strong)'
               }}
             >
               {activeStoryTab === 'philosophy' && (
@@ -171,3 +174,4 @@ export default function AtmosphereStory() {
     </section>
   );
 }
+

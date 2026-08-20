@@ -35,8 +35,9 @@ export default function Navbar({ onOpenReservation }) {
         zIndex: 100,
         transition: 'all 0.4s var(--transition-smooth)',
         boxShadow: scrolled ? 'var(--shadow-3d)' : 'none',
-        background: scrolled ? 'rgba(10, 11, 13, 0.92)' : 'rgba(10, 11, 13, 0.75)',
-        backdropFilter: 'blur(20px)',
+        background: scrolled ? 'rgba(12, 10, 9, 0.94)' : 'rgba(12, 10, 9, 0.82)',
+        backdropFilter: 'blur(24px)',
+        WebkitBackdropFilter: 'blur(24px)',
         borderBottom: '1px solid var(--border-gold)'
       }}
     >
@@ -56,15 +57,15 @@ export default function Navbar({ onOpenReservation }) {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '2rem'
+            gap: '2.2rem'
           }}
           className="desktop-only"
         >
           {[
             { id: 'hero', label: 'Home' },
             { id: 'story', label: 'Our Story' },
-            { id: 'menu', label: 'Menu' },
-            { id: 'experience', label: 'Experience' },
+            { id: 'menu', label: '3D Menu' },
+            { id: 'experience', label: 'Accolades' },
             { id: 'gallery', label: 'Gallery' },
             { id: 'contact', label: 'Contact' },
           ].map(link => (
@@ -77,7 +78,7 @@ export default function Navbar({ onOpenReservation }) {
                 color: 'var(--text-primary)',
                 fontFamily: 'var(--font-display)',
                 fontWeight: 600,
-                fontSize: '0.9rem',
+                fontSize: '0.92rem',
                 letterSpacing: '0.04em',
                 transition: 'all 0.3s ease',
                 position: 'relative'
@@ -98,13 +99,14 @@ export default function Navbar({ onOpenReservation }) {
               padding: '0.65rem',
               borderRadius: '50%',
               border: '1px solid var(--border-gold)',
-              backgroundColor: 'rgba(23, 26, 33, 0.7)',
+              backgroundColor: 'rgba(28, 23, 19, 0.75)',
               color: soundEnabled ? 'var(--accent-gold-bright)' : 'var(--text-muted)',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              transition: 'all 0.3s ease'
+              transition: 'all 0.3s ease',
+              boxShadow: soundEnabled ? '0 0 15px rgba(245, 158, 11, 0.25)' : 'none'
             }}
             title={soundEnabled ? "Mute Ambient Sound" : "Enable Ambient Sound"}
           >
@@ -119,7 +121,7 @@ export default function Navbar({ onOpenReservation }) {
               padding: '0.65rem',
               borderRadius: '50%',
               border: '1px solid var(--border-gold)',
-              backgroundColor: 'rgba(23, 26, 33, 0.7)',
+              backgroundColor: 'rgba(28, 23, 19, 0.75)',
               color: 'var(--text-primary)',
               cursor: 'pointer',
               display: 'flex',
@@ -137,8 +139,8 @@ export default function Navbar({ onOpenReservation }) {
                   top: '-4px',
                   right: '-4px',
                   backgroundColor: 'var(--accent-gold)',
-                  color: '#0A0B0D',
-                  fontSize: '0.7rem',
+                  color: '#0C0A09',
+                  fontSize: '0.72rem',
                   fontWeight: '800',
                   width: '20px',
                   height: '20px',
@@ -146,7 +148,7 @@ export default function Navbar({ onOpenReservation }) {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  boxShadow: '0 2px 8px rgba(212, 175, 55, 0.6)'
+                  boxShadow: '0 2px 10px rgba(245, 158, 11, 0.65)'
                 }}
               >
                 {cartCount}
@@ -164,7 +166,7 @@ export default function Navbar({ onOpenReservation }) {
             <span>Reserve Table</span>
           </button>
 
-          {/* Mobile Menu Toggle Toggle */}
+          {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="mobile-only"
@@ -199,8 +201,8 @@ export default function Navbar({ onOpenReservation }) {
           {[
             { id: 'hero', label: 'Home' },
             { id: 'story', label: 'Our Story' },
-            { id: 'menu', label: 'Menu' },
-            { id: 'experience', label: 'Experience' },
+            { id: 'menu', label: '3D Menu' },
+            { id: 'experience', label: 'Accolades' },
             { id: 'gallery', label: 'Gallery' },
             { id: 'contact', label: 'Contact' },
           ].map(link => (
@@ -224,3 +226,4 @@ export default function Navbar({ onOpenReservation }) {
     </header>
   );
 }
+
